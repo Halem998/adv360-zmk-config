@@ -114,14 +114,14 @@
 //            layers = <0 6 1>;
 //        };
 
-        combo_cpgrk {
-            timeout-ms = <35>;
-            key-positions = <RT1 RT2 RT3>;
-            bindings = <&sls 0>;
-            layers = <0 6 1>;
-        };
-    };
-};
+//        combo_cpgrk {
+//            timeout-ms = <35>;
+//            key-positions = <RT1 RT2 RT3>;
+//            bindings = <&sls 0>;
+//            layers = <0 6 1>;
+//        };
+//    };
+//};
 
 
 
