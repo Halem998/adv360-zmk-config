@@ -143,7 +143,7 @@
 
 
 
-/ {
+/{
     /* remove unused keys from layout and move thumb cluster to bottom */
     chosen {
         zmk,matrix_transform = &urobs_transform;
