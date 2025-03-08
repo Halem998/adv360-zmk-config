@@ -18,7 +18,6 @@
 #define SYM 2
 #define FN 3
 #define MOD 4
-#define MS 5
 #define NAV 5
 
 /* Global settings */
