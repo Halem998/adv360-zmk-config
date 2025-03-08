@@ -114,12 +114,13 @@
             bindings = <&kp RBRC>;
             layers = <6>;
         };
-        combo_grk {
-            timeout-ms = <35>;
-            key-positions = <RT1 RT3>;
-            bindings = <&sl UC>;
-            layers = <0 6 1>;
-        };
+//        combo_grk {
+//            timeout-ms = <35>;
+//            key-positions = <RT1 RT3>;
+//            bindings = <&sl UC>;
+//            layers = <0 6 1>;
+//        };
+
         combo_cpgrk {
             timeout-ms = <35>;
             key-positions = <RT1 RT2 RT3>;
