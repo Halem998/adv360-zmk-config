@@ -8,7 +8,6 @@
 #include "adv360pro_keypos.h"
 #include "zmk_helper.h"
 
-#include "combos.dtsi"
 
 
 /* definitions for mouse layer */
