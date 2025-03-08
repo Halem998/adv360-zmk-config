@@ -8,6 +8,9 @@
 #include "adv360pro_keypos.h"
 #include "zmk_helper.h"
 
+#include "combos.dtsi"
+
+
 /* definitions for mouse layer */
 #include "mouse.h"
 #define ___ &trans
@@ -215,39 +218,4 @@
 
 };
 
-#undef COMBO_HOOK
-#define COMBO_HOOK 
-
-#define COMBO_TERM_FAST 20
-#define COMBO_TERM_SLOW 35
-
-// Make homerow combos tap-only (so HRMs can be chorded instantaneously)
-#define HRC_TAB    &hml         LA(LCTRL) TAB
-#define HRC_REPEAT &hml_repeat  LS(LCTRL) 0
-#define HRC_DOT    &hmr_dot_lt  RS(LCTRL) 0
-#define HRC_COMMA  &hmr_comma_gt LA(LCTRL) 0
-
-/* Horizontal combos - left hand */
-
-ZMK_COMBO(esc,   &kp ESC,       LT3 LT2,     DEF NAV NUM, COMBO_TERM_FAST)
-ZMK_COMBO(space, &kp SPACE,     LB3 LB2,     DEF NAV NUM, COMBO_TERM_FAST)
-ZMK_COMBO(ret,   &kp RETURN,    LB2 LB1,     DEF NAV NUM, COMBO_TERM_FAST)
-ZMK_COMBO(mouse, &smart_mouse,  LB3 LB1,     DEF NAV NUM, COMBO_TERM_SLOW)
-
-ZMK_COMBO(cut,   &kp LC(X),     LT3 LT1,     DEF NAV NUM, COMBO_TERM_SLOW)
-ZMK_COMBO(copy,  &kp LC(INS),   LT3 LT2,     DEF NAV NUM, COMBO_TERM_FAST)
-ZMK_COMBO(paste, &kp LS(INS),   LT2 LT1,     DEF NAV NUM, COMBO_TERM_FAST)
-
-/* Horizontal combos - right hand */
-
-ZMK_COMBO(del,   &kp DEL,       RB1 RB2,     DEF NAV NUM, COMBO_TERM_FAST)
-ZMK_COMBO(bspc,  &kp BSPC,      RB2 RB3,     DEF NAV NUM, COMBO_TERM_FAST)
-
-ZMK_COMBO(qmark, &kp QMARK,     RT1 RT2,     DEF NUM,     COMBO_TERM_FAST)
-ZMK_COMBO(excl,  &kp EXCL,      RT2 RT3,     DEF NUM,     COMBO_TERM_FAST)
-ZMK_COMBO(lbrc,  &kp LBRC,      RT1 RT2,     NAV,         COMBO_TERM_FAST)
-ZMK_COMBO(rbrc,  &kp RBRC,      RT2 RT3,     NAV,         COMBO_TERM_FAST)
-
-ZMK_COMBO(grk,   &sl UC,        RT1 RT3,     DEF NAV NUM, COMBO_TERM_SLOW)
-ZMK_COMBO(cpgrk, &sls,          RT1 RT2 RT3, DEF NAV NUM, COMBO_TERM_SLOW)
 
