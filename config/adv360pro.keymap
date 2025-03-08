@@ -216,46 +216,99 @@
 };
 
 /* combos */
-#undef COMBO_HOOK
-#define COMBO_HOOK global-quick-tap-ms = <100>;
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <20>;
+            key-positions = <LT3 LT2>;
+            bindings = <&kp ESC>;
+            layers = <0 6 1>;  /* DEF NAV NUM */
+        };
+        combo_space {
+            timeout-ms = <20>;
+            key-positions = <LB3 LB2>;
+            bindings = <&kp SPACE>;
+            layers = <0 6 1>;
+        };
+        combo_ret {
+            timeout-ms = <20>;
+            key-positions = <LB2 LB1>;
+            bindings = <&kp RETURN>;
+            layers = <0 6 1>;
+        };
+        combo_mouse {
+            timeout-ms = <35>;
+            key-positions = <LB3 LB1>;
+            bindings = <&smart_mouse>;
+            layers = <0 6 1>;
+        };
+        combo_cut {
+            timeout-ms = <35>;
+            key-positions = <LT3 LT1>;
+            bindings = <&kp LC(X)>;
+            layers = <0 6 1>;
+        };
+        combo_copy {
+            timeout-ms = <20>;
+            key-positions = <LT3 LT2>;
+            bindings = <&kp LC(INS)>;
+            layers = <0 6 1>;
+        };
+        combo_paste {
+            timeout-ms = <20>;
+            key-positions = <LT2 LT1>;
+            bindings = <&kp LS(INS)>;
+            layers = <0 6 1>;
+        };
+        combo_del {
+            timeout-ms = <20>;
+            key-positions = <RB1 RB2>;
+            bindings = <&kp DEL>;
+            layers = <0 6 1>;
+        };
+        combo_bspc {
+            timeout-ms = <20>;
+            key-positions = <RB2 RB3>;
+            bindings = <&kp BSPC>;
+            layers = <0 6 1>;
+        };
+        combo_qmark {
+            timeout-ms = <20>;
+            key-positions = <RT1 RT2>;
+            bindings = <&kp QMARK>;
+            layers = <0 1>;
+        };
+        combo_excl {
+            timeout-ms = <20>;
+            key-positions = <RT2 RT3>;
+            bindings = <&kp EXCL>;
+            layers = <0 1>;
+        };
+        combo_lbrc {
+            timeout-ms = <20>;
+            key-positions = <RT1 RT2>;
+            bindings = <&kp LBRC>;
+            layers = <6>;
+        };
+        combo_rbrc {
+            timeout-ms = <20>;
+            key-positions = <RT2 RT3>;
+            bindings = <&kp RBRC>;
+            layers = <6>;
+        };
+        combo_grk {
+            timeout-ms = <35>;
+            key-positions = <RT1 RT3>;
+            bindings = <&sl UC>;
+            layers = <0 6 1>;
+        };
+        combo_cpgrk {
+            timeout-ms = <35>;
+            key-positions = <RT1 RT2 RT3>;
+            bindings = <&sls 0>;
+            layers = <0 6 1>;
+        };
+    };
+};
 
-#define COMBO_TERM_FAST 20
-#define COMBO_TERM_SLOW 35
-
-// make homerow combos tap-only (so HRMs can be chorded instantaneously)
-#define HRC_TAB    &hml         LA(LCTRL) TAB
-#define HRC_REPEAT &hml_repeat  LS(LCTRL) 0
-#define HRC_DOT   &hmr_dot_lt RS(LCTRL) 0
-#define HRC_COMMA   &hmr_comma_gt LA(LCTRL) 0
-
-/* Horizontal combos - left hand */
-
-ZMK_COMBO(esc,   &kp ESC,       LT3 LT2,     DEF NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST)						
-
-ZMK_COMBO(space, &kp SPACE,     LB3 LB2      DEF NAV NUM, COMBO_TERM_FAST)
-ZMK_COMBO(ret,   &kp RETURN,    LB2 LB1,     DEF NAV NUM, COMBO_TERM_FAST)
-ZMK_COMBO(mouse, &smart_mouse,  LB3 LB1,     DEF NAV NUM, COMBO_TERM_SLOW)
-
-// ZMK_COMBO(tab,   HRC_TAB,       LM3 LM2,     DEF NAV NUM, COMBO_TERM_FAST)
-// ZMK_COMBO(repeat,HRC_REPEAT,    LM2 LM1,     DEF NAV NUM, COMBO_TERM_FAST)
-
-ZMK_COMBO(cut,   &kp LC(X),     LT3 LT1,     DEF NAV NUM, COMBO_TERM_SLOW)
-ZMK_COMBO(copy,  &kp LC(INS),   LT3 LT2,     DEF NAV NUM, COMBO_TERM_FAST)
-ZMK_COMBO(paste, &kp LS(INS),   LT2 LT1,     DEF NAV NUM, COMBO_TERM_FAST)
-
-/* Horizontal combos - right hand */
-ZMK_COMBO(del,   &kp DEL,       RB1 RB2,     DEF NAV NUM, COMBO_TERM_FAST)
-ZMK_COMBO(bspc,  &kp BSPC,      RB2 RB3,     DEF NAV NUM, COMBO_TERM_FAST)
-
-// ZMK_COMBO(dot,   &kp DOT,       RM1 RM2,     DEF     NUM, COMBO_TERM_FAST)
-// ZMK_COMBO(colon, &kp COLON,     RM2 RM3,     DEF     NUM, COMBO_TERM_FAST)
-// ZMK_COMBO(lt,    &kp LT,        RM1 RM2,         NAV    , COMBO_TERM_FAST)
-// ZMK_COMBO(gt,    &kp GT,        RM2 RM3,         NAV    , COMBO_TERM_FAST)
-
-ZMK_COMBO(qmark, &kp QMARK,     RT1 RT2,     DEF     NUM, COMBO_TERM_FAST)
-ZMK_COMBO(excl,  &kp EXCL,      RT2 RT3,     DEF     NUM, COMBO_TERM_FAST)
-ZMK_COMBO(lbrc,  &kp LBRC,      RT1 RT2,         NAV    , COMBO_TERM_FAST)
-ZMK_COMBO(rbrc,  &kp RBRC,      RT2 RT3,         NAV    , COMBO_TERM_FAST)
-
-ZMK_COMBO(grk,   &sl UC,        RT1 RT3,     DEF NAV NUM, COMBO_TERM_SLOW)
-ZMK_COMBO(cpgrk, &sls 0,        RT1 RT2 RT3, DEF NAV NUM, COMBO_TERM_SLOW)
