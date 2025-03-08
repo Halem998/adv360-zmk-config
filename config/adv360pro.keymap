@@ -30,6 +30,10 @@
 #include "custom_behaviors.h"
 
 /* combos */
+
+#undef COMBO_HOOK
+#define COMBO_HOOK global-quick-tap-ms = <100>;
+
 / {
     combos {
         compatible = "zmk,combos";
