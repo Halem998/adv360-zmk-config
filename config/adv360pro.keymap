@@ -43,13 +43,13 @@
             timeout-ms = <20>;
             key-positions = <LB3 LB2>;
             bindings = <&kp SPACE>;
-            layers = <0 6 1>;
+            layers = <0 5 1>;
         };
         combo_ret {
             timeout-ms = <20>;
             key-positions = <LB2 LB1>;
             bindings = <&kp RETURN>;
-            layers = <0 6 1>;
+            layers = <0 5 1>;
         };
         
        
@@ -57,31 +57,31 @@
             timeout-ms = <35>;
             key-positions = <LT3 LT1>;
             bindings = <&kp LC(X)>;
-            layers = <0 6 1>;
+            layers = <0 5 1>;
         };
         combo_copy {
             timeout-ms = <20>;
             key-positions = <LT3 LT2>;
             bindings = <&kp LC(INS)>;
-            layers = <0 6 1>;
+            layers = <0 5 1>;
         };
         combo_paste {
             timeout-ms = <20>;
             key-positions = <LT2 LT1>;
             bindings = <&kp LS(INS)>;
-            layers = <0 6 1>;
+            layers = <0 5 1>;
         };
         combo_del {
             timeout-ms = <20>;
             key-positions = <RB1 RB2>;
             bindings = <&kp DEL>;
-            layers = <0 6 1>;
+            layers = <0 5 1>;
         };
         combo_bspc {
             timeout-ms = <20>;
             key-positions = <RB2 RB3>;
             bindings = <&kp BSPC>;
-            layers = <0 6 1>;
+            layers = <0 5 1>;
         };
         combo_qmark {
             timeout-ms = <20>;
@@ -99,26 +99,26 @@
             timeout-ms = <20>;
             key-positions = <RT1 RT2>;
             bindings = <&kp LBRC>;
-            layers = <6>;
+            layers = <5>;
         };
         combo_rbrc {
             timeout-ms = <20>;
             key-positions = <RT2 RT3>;
             bindings = <&kp RBRC>;
-            layers = <6>;
+            layers = <5>;
         };
 //        combo_grk {
 //            timeout-ms = <35>;
 //            key-positions = <RT1 RT3>;
 //            bindings = <&sl UC>;
-//            layers = <0 6 1>;
+//            layers = <0 5 1>;
 //        };
 
 //        combo_cpgrk {
 //            timeout-ms = <35>;
 //            key-positions = <RT1 RT2 RT3>;
 //            bindings = <&sls 0>;
-//            layers = <0 6 1>;
+//            layers = <0 5 1>;
 //        };
 //    };
 };
