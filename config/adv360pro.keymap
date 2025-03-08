@@ -28,6 +28,8 @@
 /* Home row mods */
 #include "homerow_mods.h"
 
+/* combos does it go well? */
+#include "combos.dtsi"
 /* Macros and shortcuts */
 #include "custom_behaviors.h"
 
