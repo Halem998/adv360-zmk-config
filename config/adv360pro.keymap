@@ -41,7 +41,7 @@
             timeout-ms = <20>;
             key-positions = <LT3 LT2>;
             bindings = <&kp ESC>;
-            layers = <0 6 1>;  /* DEF NAV NUM */
+            layers = <0 5 1>;  /* DEF NAV NUM */
         };
         combo_space {
             timeout-ms = <20>;
