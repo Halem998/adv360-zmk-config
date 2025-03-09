@@ -8,36 +8,6 @@
 #include "adv360pro_keypos.h"
 #include "zmk_helper.h"
 
-#include <dt-bindings/zmk/keys.h>
-
-/* german letters */ 
-
-/ {
-    behaviors {
-        de_ae: de_ae {
-            compatible = "zmk,behavior-key-press";
-            #binding-cells = <0>;
-            bindings = <&uc 0x00E4>;  // ä
-        };
-        de_oe: de_oe {
-            compatible = "zmk,behavior-key-press";
-            #binding-cells = <0>;
-            bindings = <&uc 0x00F6>;  // ö
-        };
-        de_ue: de_ue {
-            compatible = "zmk,behavior-key-press";
-            #binding-cells = <0>;
-            bindings = <&uc 0x00FC>;  // ü
-        };
-        de_eszett: de_eszett {
-            compatible = "zmk,behavior-key-press";
-            #binding-cells = <0>;
-            bindings = <&uc 0x00DF>;  // ß
-        };
-    };
-};
-
-
 #define ___ &trans
 
 /* Layer references  */
@@ -161,7 +131,7 @@
 
 
 
-/{
+/{   /*start of device tree */
     /* remove unused keys from layout and move thumb cluster to bottom */
     chosen {
         zmk,matrix_transform = &urobs_transform;
@@ -319,9 +289,6 @@
         };
 
     };
-
-
-
 };
 
 
