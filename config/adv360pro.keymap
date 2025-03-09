@@ -13,6 +13,7 @@
 /* german letters */ 
 
 / {
+    behaviors {
     de_ae: de_ae {
         compatible = "zmk,behavior-unicode";
         #binding-cells = <0>;
@@ -33,8 +34,7 @@
         #binding-cells = <0>;
         codepoints = <0x00DF>;          // ß (no uppercase ẞ here, see note)
     };
-
-    // Rest of your file (combos, keymap, etc.)
+};
 };
    
 
