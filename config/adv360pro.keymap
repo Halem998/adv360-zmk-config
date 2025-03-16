@@ -64,6 +64,12 @@
             bindings = <&kp TAB>;
             layers = <0 1 2>;
         };
+        combo_shift_tab {
+            timeout-ms = <50>;
+            key-positions = <RT1 RT2>; 
+            bindings = <&kp LS(TAB)>;
+            layers = <0 1 2>;
+        };
         combo_bspc {
             timeout-ms = <20>;
             key-positions = <LM1 LM0>;
