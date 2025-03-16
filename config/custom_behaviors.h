@@ -157,7 +157,8 @@ ZMK_BEHAVIOR(comma_dance, tap_dance,
 #define CANCEL      &kp K_CANCEL        // cancel caps-word, num-word and smart-mouse
 #define LHYP        LS(LC(LA(LGUI)))
 #define RHYP        RS(RC(RA(RGUI)))
-#define COPY_CUT    &mt LG(X) LG(C)
+#define CMD_COPY    &kp LG(C)
+#define CMD_CUT     &kp LG(X) 
 #define CMD_PASTE   &kp LG(V)
 #define CMD_UNDO    &kp LG(Z)
 #define CMD_REDO    &kp LS(LG(Z))
