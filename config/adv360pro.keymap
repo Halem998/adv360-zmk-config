@@ -116,25 +116,25 @@
         combo_dot {
             timeout-ms = <20>;
             key-positions = <RB1 RB2>;
-            bindings = <&kp LBRC>;
+            bindings = <&kp DOT>;
             layers = <0 1 2>;
         };
         combo_colon {
             timeout-ms = <20>;
             key-positions = <RB1 RB3>;
-            bindings = <&kp RBRC>;
+            bindings = <&kp COLON>;
             layers = <0 1 2>;
         };
         combo_comma {
             timeout-ms = <20>;
             key-positions = <RB3 RB4>;
-            bindings = <&kp LBRC>;
+            bindings = <&kp COMMA>;
             layers = <0 1 2>;
         };
-        combo_semicolon {
+        combo_semi {
             timeout-ms = <20>;
             key-positions = <RB2 RB4>;
-            bindings = <&kp RBRC>;
+            bindings = <&kp SEMI>;
             layers = <0 1 2>;
         };
 };
