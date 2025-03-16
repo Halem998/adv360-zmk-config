@@ -37,11 +37,126 @@
     
 / { /*start of device tree */
     
-    /* remove unused keys from layout and move thumb cluster to bottom */
-    
+   combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <20>;
+            key-positions = <LT3 LT2>;
+            bindings = <&kp ESC>;
+            layers = <0 5 1>;  /* DEF NAV NUM */
+        };
+        combo_space {
+            timeout-ms = <20>;
+            key-positions = <RM1 RM2>;
+            bindings = <&kp SPACE>;
+            layers = <0 5 1>;
+        };
+        combo_ret {
+            timeout-ms = <20>;
+            key-positions = <RM0 RM1>;
+            bindings = <&kp RETURN>;
+            layers = <0 5 1>;
+        };
+         combo_tab {
+            timeout-ms = <20>;
+            key-positions = <RN2 RN3>;
+            bindings = <&kp TAB>;
+            layers = <0 5 1>;
+        };
+         combo_del {
+            timeout-ms = <20>;
+            key-positions = <RB1 RB2>;
+            bindings = <&kp DEL>;
+            layers = <0 5 1>;
+        };
+        combo_bspc {
+            timeout-ms = <20>;
+            key-positions = <LM1 LM0>;
+            bindings = <&kp BSPC>;
+            layers = <0 5 1>;
+        };
+         
+
+
+
+        combo_cut {
+            timeout-ms = <20>;
+            key-positions = <LB4 LB3>;
+            bindings = <&kp LC(X)>;
+            layers = <0 5 1>;
+        };
+        combo_copy {
+            timeout-ms = <20>;
+            key-positions = <LB3 LB2>;
+            bindings = <&kp LC(INS)>;
+            layers = <0 5 1>;
+        };
+        combo_paste {
+            timeout-ms = <20>;
+            key-positions = <LB2 LB1>;
+            bindings = <&kp LS(INS)>;
+            layers = <0 5 1>;
+        };
+       combo_undo {
+            timeout-ms = <20>;
+            key-positions = <LB4 LB1>;
+            bindings = <&kp LC(Z)>;
+            layers = <0 5 1>;
+        };
+
+
+
+        combo_qmark {
+            timeout-ms = <20>;
+            key-positions = <RB2 RB3>;
+            bindings = <&kp QMARK>;
+            layers = <0 1>;
+        };
+        combo_excl {
+            timeout-ms = <20>;
+            key-positions = <RB1 RB4>;
+            bindings = <&kp EXCL>;
+            layers = <0 1>;
+        };
+        combo_dot {
+            timeout-ms = <20>;
+            key-positions = <RB1 RB2>;
+            bindings = <&kp LBRC>;
+            layers = <0 1 5>;
+        };
+        combo_colon {
+            timeout-ms = <20>;
+            key-positions = <RB1 RB3>;
+            bindings = <&kp RBRC>;
+            layers = <0 1 5>;
+        };
+        combo_comma {
+            timeout-ms = <20>;
+            key-positions = <RB3 RB4>;
+            bindings = <&kp LBRC>;
+            layers = <0 1 5>;
+        };
+        combo_semicolon {
+            timeout-ms = <20>;
+            key-positions = <RB2 RB4>;
+            bindings = <&kp RBRC>;
+            layers = <0 1 5>;
+        };
+};
+
+
+
+
+
     chosen {
         zmk,matrix_transform = &urobs_transform;
-           };
+           }; /* remove unused keys from layout and move thumb cluster to bottom */
+
+
+
+
+
+
 
     keymap {
         compatible = "zmk,keymap";
