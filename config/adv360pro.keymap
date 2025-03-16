@@ -17,9 +17,9 @@
 #define QWERTY 0
 #define SYM 1
 #define NUM 2
-#define FN 3
-#define MOD 4
-#define NAV 5
+#define NAV 3
+#define FN 4
+#define MOD 5
 
 /* Global settings */
 #include "general.h"
