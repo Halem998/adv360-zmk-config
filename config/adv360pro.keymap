@@ -77,25 +77,25 @@
         combo_cut {
             timeout-ms = <20>;
             key-positions = <LB4 LB3>;
-            bindings = <&kp LC(X)>;
+            bindings = <&kp LG(X)>;
             layers = <0 1 2>;
         };
         combo_copy {
             timeout-ms = <20>;
             key-positions = <LB3 LB2>;
-            bindings = <&kp LC(INS)>;
+            bindings = <&kp LG(C)>;
             layers = <0 1 2>;
         };
         combo_paste {
             timeout-ms = <20>;
             key-positions = <LB2 LB1>;
-            bindings = <&kp LS(INS)>;
+            bindings = <&kp LG(V)>;
             layers = <0 1 2>;
         };
        combo_undo {
             timeout-ms = <20>;
             key-positions = <LB4 LB1>;
-            bindings = <&kp LC(Z)>;
+            bindings = <&kp LG(Z)>;
             layers = <0 1 2>;
         };
 
