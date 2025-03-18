@@ -6,7 +6,7 @@
         unicode_german: unicode_german {
             compatible = "zmk,behavior-unicode";
             #binding-cells = <1>;
-            hex-mode = <UC_MAC>; // For macOS
+            hex-mode = <2>; // For macOS
             label = "UNICODE_GERMAN";
         };
     };
