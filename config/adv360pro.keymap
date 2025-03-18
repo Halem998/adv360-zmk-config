@@ -7,7 +7,6 @@
 
 #include "adv360pro_keypos.h"
 #include "zmk_helper.h"
-#include "german.dtsi"
 
 #define ___ &trans
 
