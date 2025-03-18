@@ -1,23 +1,3 @@
-// Adding German-specific umlaut behaviors
-ZMK_BEHAVIOR(umlaut_a, mod_morph,
-    bindings = <&kp U00E4>, <&kp U00C4>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
-
-ZMK_BEHAVIOR(umlaut_o, mod_morph,
-    bindings = <&kp U00F6>, <&kp U00D6>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
-
-ZMK_BEHAVIOR(umlaut_u, mod_morph,
-    bindings = <&kp U00FC>, <&kp U00DC>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
-
-ZMK_BEHAVIOR(eszett, mod_morph,
-    bindings = <&kp U00DF>; 
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-)
 
 
 // autopair macros
