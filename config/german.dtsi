@@ -12,28 +12,28 @@
     };
 
     macros {
-        german_ae: german_ae {
+        german_ae: de_ae {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&unicode_german 0x00E4>;
             label = "GERMAN_AE";
         };
         
-        german_oe: german_oe {
+        german_oe: de_oe {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&unicode_german 0x00F6>;
             label = "GERMAN_OE"; 
         };
         
-        german_ue: german_ue {
+        german_ue: de_ue {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&unicode_german 0x00FC>;
             label = "GERMAN_UE";
         };
         
-        german_eszett: german_eszett {
+        german_eszett: de_eszett {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&unicode_german 0x00DF>;
