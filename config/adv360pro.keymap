@@ -165,12 +165,12 @@
  
         qwerty_layer {
             bindings = <
-     ___            ___           ___           ___           ___           ___            ___              ___           ___           ___           ___           ___            ___            &mo MOD
-     ___            &kp Q         &kp W         &kp E         &kp R         &kp T          ___              ___            &kp Y         &kp U         &kp I         &kp O         &kp P             ___
-     ___            &hml LGUI A  &hml LALT S   &hml LCTRL D   &hml LSHFT F  &kp G          ___              ___            &kp H         &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L   &hmr RGUI &de_ue  ___
-     ___            &kp Z         &kp X         &kp C         &kp V         &kp B                                          &kp N         &kp M         &de_ae        &de_eszett    &de_oe            ___
-     ___            ___           ___           ___           ___                                                                        ___           ___           ___           ___               ___
-                                                                             ___           ___              ___           ___    
+     ___            ___           ___           ___           ___           ___            ___              ___            ___           ___           ___           ___             ___                  &mo MOD
+     ___            &kp Q         &kp W         &kp E         &kp R         &kp T          ___              ___            &kp Y         &kp U         &kp I         &kp O          &kp P                 ___
+     ___            &hml LGUI A  &hml LALT S   &hml LCTRL D   &hml LSHFT F  &kp G          ___              ___            &kp H         &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L    &hmr RGUI &german_ue  ___
+     ___            &kp Z         &kp X         &kp C         &kp V         &kp B                                          &kp N         &kp M         &german_ae    &german_eszett &german_oe            ___
+     ___            ___           ___           ___           ___                                                                        ___           ___           ___            ___                   ___
+                                                                             ___           ___              ___            ___    
                                                               &lt NUM BSPC  &lt FN ESC     ___              ___            &lt NAV RET  &lt SYM SPC
                                                                                            ___              ___
                     >;
