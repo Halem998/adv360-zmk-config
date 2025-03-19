@@ -44,6 +44,16 @@
         bindings = <&macro_press &kp LCTRL>, <&macro_press &kp LSHFT>, <&macro_tap &kp U>, <&macro_release &kp LSHFT>, <&macro_release &kp LCTRL>;
         label = "UNICODE_INPUT";
     };
+hm_ue: homerow_mod_ue {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&german_ue>;
+            label = "HOMEROW_MOD_UE";
+    };
+
 };
 
 
