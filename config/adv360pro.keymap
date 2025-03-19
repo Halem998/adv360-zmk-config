@@ -45,6 +45,7 @@
             quick-tap-ms = <125>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&german_ue>;
+            label = "HOMEROW_MOD_UE";
     };
 };
 
