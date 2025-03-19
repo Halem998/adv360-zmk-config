@@ -36,7 +36,41 @@
 
     
 / { /*start of device tree */
-    
+
+    macros {
+        // For macOS
+        german_ae: german_ae {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp U &kp A>, <&macro_release &kp LALT>;
+            label = "GERMAN_AE";
+        };
+        
+        german_oe: german_oe {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp U &kp O>, <&macro_release &kp LALT>;
+            label = "GERMAN_OE";
+        };
+        
+        german_ue: german_ue {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp U &kp U>, <&macro_release &kp LALT>;
+            label = "GERMAN_UE";
+        };
+        
+        german_eszett: german_eszett {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp S &kp S>, <&macro_release &kp LALT>;
+            label = "GERMAN_ESZETT";
+        };
+    };
+
+
+
+
    combos {
         compatible = "zmk,combos";
         
@@ -166,8 +200,8 @@
             bindings = <
      ___            ___           ___           ___           ___           ___            ___              ___            ___           ___           ___           ___             ___                  &mo MOD
      ___            &kp Q         &kp W         &kp E         &kp R         &kp T          ___              ___            &kp Y         &kp U         &kp I         &kp O          &kp P                 ___
-     ___            &hml LGUI A  &hml LALT S   &hml LCTRL D   &hml LSHFT F  &kp G          ___              ___            &kp H         &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L    &hmr RGUI U00FC       ___
-     ___            &kp Z         &kp X         &kp C         &kp V         &kp B                                          &kp N         &kp M         &kp U00E4     &kp U00DF      &kp U00F6             ___
+     ___            &hml LGUI A  &hml LALT S   &hml LCTRL D   &hml LSHFT F  &kp G          ___              ___            &kp H         &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L    &hmr RGUI X           ___
+     ___            &kp Z         &kp X         &kp C         &kp V         &kp B                                          &kp N         &kp M         &german_ae    &german_ue     &german_eszett        ___
      ___            ___           ___           ___           ___                                                                        ___           ___           ___            ___                   ___
                                                                              ___           ___              ___            ___    
                                                               &lt NUM BSPC  &lt FN ESC     ___              ___            &lt NAV RET  &lt SYM SPC
