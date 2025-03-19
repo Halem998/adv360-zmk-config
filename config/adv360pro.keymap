@@ -50,37 +50,36 @@
 };
 
 
-    macros {
-        // For macOS
-        german_ae: german_ae {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>, <&macro_tap &kp U &kp A>, <&macro_release &kp LALT>;
-            label = "GERMAN_AE";
-        };
-        
-        german_oe: german_oe {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>, <&macro_tap &kp U &kp O>, <&macro_release &kp LALT>;
-            label = "GERMAN_OE";
-        };
-        
-        german_ue: german_ue {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>, <&macro_tap &kp U &kp U>, <&macro_release &kp LALT>;
-            label = "GERMAN_UE";
-        };
-        
-        german_eszett: german_eszett {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_press &kp LALT>, <&macro_tap &kp S &kp S>, <&macro_release &kp LALT>;
-            label = "GERMAN_ESZETT";
-        };
+  macros {
+    // For macOS
+    german_ae: german_ae {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_tap &kp A>, <&macro_release &kp LALT>;
+        label = "GERMAN_AE";
     };
-
+    
+    german_oe: german_oe {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_tap &kp O>, <&macro_release &kp LALT>;
+        label = "GERMAN_OE";
+    };
+    
+    german_ue: german_ue {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_tap &kp U>, <&macro_release &kp LALT>;
+        label = "GERMAN_UE";
+    };
+    
+    german_eszett: german_eszett {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&macro_press &kp LALT>, <&macro_tap &kp S>, <&macro_release &kp LALT>;
+        label = "GERMAN_ESZETT";
+    };
+};
 
 
 
