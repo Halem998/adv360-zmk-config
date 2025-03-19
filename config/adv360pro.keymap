@@ -55,21 +55,21 @@ macros {
     german_ae: german_ae {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_wait_time 20>, <&macro_tap &kp A>, <&macro_release &kp LALT>;
+        bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_wait_time 50>, <&macro_tap &kp A>, <&macro_release &kp LALT>;
         label = "GERMAN_AE";
     };
     
     german_oe: german_oe {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_wait_time 20>, <&macro_tap &kp O>, <&macro_release &kp LALT>;
+        bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_wait_time 50>, <&macro_tap &kp O>, <&macro_release &kp LALT>;
         label = "GERMAN_OE";
     };
     
     german_ue: german_ue {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_wait_time 20>, <&macro_tap &kp U>, <&macro_release &kp LALT>;
+        bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_wait_time 50>, <&macro_tap &kp U>, <&macro_release &kp LALT>;
         label = "GERMAN_UE";
     };
     
