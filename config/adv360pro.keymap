@@ -7,6 +7,7 @@
 
 #include "adv360pro_keypos.h"
 #include "zmk_helper.h"
+#include "helper.h" 
 
 ZMK_UNICODE_PAIR(de_ae, N0, N0, E, N4, N0, N0, C, N4); // ä and Ä
 ZMK_UNICODE_PAIR(de_oe, N0, N0, F, N6, N0, N0, D, N6); // ö and Ö
@@ -44,36 +45,6 @@ ZMK_UNICODE_SINGLE(de_eszett, N0, N0, D, F);           // ß
 
     
 / { /*start of device tree */
-
-behaviors {
-    de_ae_behavior: de_ae_behavior {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&de_ae>;
-        label = "DE_AE_BEHAVIOR";
-    };
-
-    de_oe_behavior: de_oe_behavior {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&de_oe>;
-        label = "DE_OE_BEHAVIOR";
-    };
-
-    de_ue_behavior: de_ue_behavior {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&de_ue>;
-        label = "DE_UE_BEHAVIOR";
-    };
-
-    de_eszett_behavior: de_eszett_behavior {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&de_eszett>;
-        label = "DE_ESZETT_BEHAVIOR";
-    };
-};
 
 
    combos {
@@ -206,8 +177,8 @@ behaviors {
         bindings = <
             ___            ___           ___           ___           ___           ___            ___              ___            ___           ___           ___           ___             ___                  &mo MOD
             ___            &kp Q         &kp W         &kp E         &kp R         &kp T          ___              ___            &kp Y         &kp U         &kp I         &kp O          &kp P                 ___
-            ___            &hml LGUI A  &hml LALT S   &hml LCTRL D   &hml LSHFT F  &kp G          ___              ___            &kp H         &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L    &de_ue_behavior       ___
-            ___            &kp Z         &kp X         &kp C         &kp V         &kp B                                          &kp N         &kp M         &de_ae_behavior &de_eszett_behavior &de_oe_behavior ___
+            ___            &hml LGUI A  &hml LALT S   &hml LCTRL D   &hml LSHFT F  &kp G          ___              ___            &kp H         &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L    &hmr &de_ue                ___
+            ___            &kp Z         &kp X         &kp C         &kp V         &kp B                                          &kp N         &kp M         &de_ae        &de_eszett     &de_oe                ___
             ___            ___           ___           ___           ___                                                                        ___           ___           ___            ___                   ___
                                                                                     ___           ___              ___            ___    
                                                                 &lt NUM BSPC  &lt FN ESC     ___              ___            &lt NAV RET  &lt SYM SPC
