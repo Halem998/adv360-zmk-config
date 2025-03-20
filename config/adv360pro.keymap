@@ -8,10 +8,10 @@
 #include "adv360pro_keypos.h"
 #include "zmk_helper.h"
 
-ZMK_UNICODE_PAIR(   de_ae,      N0, N0,  E, N4,    N0, N0,  C, N4) // ä and Ä
-ZMK_UNICODE_PAIR(   de_oe,      N0, N0,  F, N6,    N0, N0,  D, N6) // ö and Ö
-ZMK_UNICODE_PAIR(   de_ue,      N0, N0,  F,  C,    N0, N0,  D,  C) // ü and Ü
-ZMK_UNICODE_SINGLE( de_eszett,  N0, N0,  D,  F) // ß
+ZMK_UNICODE_PAIR(   de_ae,      N0, N0,  E, N4,    N0, N0,  C, N4); // ä and Ä
+ZMK_UNICODE_PAIR(   de_oe,      N0, N0,  F, N6,    N0, N0,  D, N6); // ö and Ö
+ZMK_UNICODE_PAIR(   de_ue,      N0, N0,  F,  C,    N0, N0,  D,  C); // ü and Ü
+ZMK_UNICODE_SINGLE( de_eszett,  N0, N0,  D,  F); // ß
 
 
 
