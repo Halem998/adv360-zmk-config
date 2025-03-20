@@ -8,6 +8,14 @@
 #include "adv360pro_keypos.h"
 #include "zmk_helper.h"
 
+ZMK_UNICODE_PAIR(   de_ae,      N0, N0,  E, N4,    N0, N0,  C, N4) // ä and Ä
+ZMK_UNICODE_PAIR(   de_oe,      N0, N0,  F, N6,    N0, N0,  D, N6) // ö and Ö
+ZMK_UNICODE_PAIR(   de_ue,      N0, N0,  F,  C,    N0, N0,  D,  C) // ü and Ü
+ZMK_UNICODE_SINGLE( de_eszett,  N0, N0,  D,  F) // ß
+
+
+
+
 #define ___ &trans
 
 
@@ -37,55 +45,33 @@
     
 / { /*start of device tree */
 
-    behaviors {
-    unicode_input: unicode_input {
+behaviors {
+    de_ae_behavior: de_ae_behavior {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_press &kp LCTRL>, <&macro_press &kp LSHFT>, <&macro_tap &kp U>, <&macro_release &kp LSHFT>, <&macro_release &kp LCTRL>;
-        label = "UNICODE_INPUT";
-    };
-hm_ue: homerow_mod_ue {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <125>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&german_ue>;
-            label = "HOMEROW_MOD_UE";
+        bindings = <&de_ae>;
+        label = "DE_AE_BEHAVIOR";
     };
 
-};
-
-
-
-macros {
-    // For macOS (Unicode input)
-    german_ae: german_ae {
+    de_oe_behavior: de_oe_behavior {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_tap &kp U>, <&macro_tap &kp N0>, <&macro_tap &kp N0>, <&macro_tap &kp E>, <&macro_tap &kp N4>;
-        label = "GERMAN_AE";
+        bindings = <&de_oe>;
+        label = "DE_OE_BEHAVIOR";
     };
-    
-    german_oe: german_oe {
+
+    de_ue_behavior: de_ue_behavior {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_tap &kp U>, <&macro_tap &kp N0>, <&macro_tap &kp N0>, <&macro_tap &kp F>, <&macro_tap &kp N6>;
-        label = "GERMAN_OE";
+        bindings = <&de_ue>;
+        label = "DE_UE_BEHAVIOR";
     };
-    
-    german_ue: german_ue {
+
+    de_eszett_behavior: de_eszett_behavior {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_tap &kp U>, <&macro_tap &kp N0>, <&macro_tap &kp N0>, <&macro_tap &kp F>, <&macro_tap &kp C>;
-        label = "GERMAN_UE";
-    };
-    
-    german_eszett: german_eszett {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&macro_press &kp LALT>, <&macro_tap &kp S>, <&macro_release &kp LALT>;
-        label = "GERMAN_ESZETT";
+        bindings = <&de_eszett>;
+        label = "DE_ESZETT_BEHAVIOR";
     };
 };
 
@@ -211,22 +197,24 @@ macros {
 
 
 
+    
+
 
     keymap {
         compatible = "zmk,keymap";
- 
-        qwerty_layer {
-            bindings = <
-     ___            ___           ___           ___           ___           ___            ___              ___            ___           ___           ___           ___             ___                  &mo MOD
-     ___            &kp Q         &kp W         &kp E         &kp R         &kp T          ___              ___            &kp Y         &kp U         &kp I         &kp O          &kp P                 ___
-     ___            &hml LGUI A  &hml LALT S   &hml LCTRL D   &hml LSHFT F  &kp G          ___              ___            &kp H         &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L    &hm_ue RGUI 0         ___
-     ___            &kp Z         &kp X         &kp C         &kp V         &kp B                                          &kp N         &kp M         &german_ae    &german_eszett &german_oe            ___
-     ___            ___           ___           ___           ___                                                                        ___           ___           ___            ___                   ___
-                                                                             ___           ___              ___            ___    
-                                                              &lt NUM BSPC  &lt FN ESC     ___              ___            &lt NAV RET  &lt SYM SPC
+         qwerty_layer {
+        bindings = <
+            ___            ___           ___           ___           ___           ___            ___              ___            ___           ___           ___           ___             ___                  &mo MOD
+            ___            &kp Q         &kp W         &kp E         &kp R         &kp T          ___              ___            &kp Y         &kp U         &kp I         &kp O          &kp P                 ___
+            ___            &hml LGUI A  &hml LALT S   &hml LCTRL D   &hml LSHFT F  &kp G          ___              ___            &kp H         &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L    &de_ue_behavior       ___
+            ___            &kp Z         &kp X         &kp C         &kp V         &kp B                                          &kp N         &kp M         &de_ae_behavior &de_eszett_behavior &de_oe_behavior ___
+            ___            ___           ___           ___           ___                                                                        ___           ___           ___            ___                   ___
+                                                                                    ___           ___              ___            ___    
+                                                                &lt NUM BSPC  &lt FN ESC     ___              ___            &lt NAV RET  &lt SYM SPC
                                                                                            ___              ___
-                    >;
-                    };
+        >;
+    };
+        
 
 
 
