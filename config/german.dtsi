@@ -1,43 +1,6 @@
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
+#include "helper.h"
 
-/ {
-    behaviors {
-        unicode_german: unicode_german {
-            compatible = "zmk,behavior-unicode";
-            #binding-cells = <1>;
-            hex-mode = <2>; // For macOS
-            label = "UNICODE_GERMAN";
-        };
-    };
-
-    macros {
-        german_ae: german_ae {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&unicode_german 0x00E4>;
-            label = "GERMAN_AE";
-        };
-        
-        german_oe: german_oe {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&unicode_german 0x00F6>;
-            label = "GERMAN_OE"; 
-        };
-        
-        german_ue: german_ue {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&unicode_german 0x00FC>;
-            label = "GERMAN_UE";
-        };
-        
-        german_eszett: german_eszett {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&unicode_german 0x00DF>;
-            label = "GERMAN_ESZETT";
-        };
-    };
-};
+ZMK_UNICODE_PAIR(de_ae, N0, N0, E, N4, N0, N0, C, N4); // ä and Ä
+ZMK_UNICODE_PAIR(de_oe, N0, N0, F, N6, N0, N0, D, N6); // ö and Ö
+ZMK_UNICODE_PAIR(de_ue, N0, N0, F, C, N0, N0, D, C);   // ü and Ü
+ZMK_UNICODE_SINGLE(de_eszett, N0, N0, D, F);           // ß
