@@ -1,11 +1,89 @@
+//#include "helper.h"
+
+// / {
+ //   behaviors {
+ //       // Define Unicode behaviors for German characters
+ //       ZMK_UNICODE_PAIR(de_ae, N0, N0, E, N4, N0, N0, C, N4); // ä and Ä
+ //       ZMK_UNICODE_PAIR(de_oe, N0, N0, F, N6, N0, N0, D, N6); // ö and Ö
+ //       ZMK_UNICODE_PAIR(de_ue, N0, N0, F, C, N0, N0, D, C);   // ü and Ü
+ //       ZMK_UNICODE_SINGLE(de_eszett, N0, N0, D, F);           // ß
+ //   };
+// };
+
 #include "helper.h"
 
 / {
     behaviors {
         // Define Unicode behaviors for German characters
-        ZMK_UNICODE_PAIR(de_ae, N0, N0, E, N4, N0, N0, C, N4); // ä and Ä
-        ZMK_UNICODE_PAIR(de_oe, N0, N0, F, N6, N0, N0, D, N6); // ö and Ö
-        ZMK_UNICODE_PAIR(de_ue, N0, N0, F, C, N0, N0, D, C);   // ü and Ü
-        ZMK_UNICODE_SINGLE(de_eszett, N0, N0, D, F);           // ß
+        de_ae_lower: de_ae_lower {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp N0 &kp N0 &kp E &kp N4>;
+        };
+        de_ae_upper: de_ae_upper {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp N0 &kp N0 &kp C &kp N4>;
+        };
+        de_ae: de_ae {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&de_ae_lower>, <&de_ae_upper>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        de_oe_lower: de_oe_lower {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp N0 &kp N0 &kp F &kp N6>;
+        };
+        de_oe_upper: de_oe_upper {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp N0 &kp N0 &kp D &kp N6>;
+        };
+        de_oe: de_oe {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&de_oe_lower>, <&de_oe_upper>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        de_ue_lower: de_ue_lower {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp N0 &kp N0 &kp F &kp C>;
+        };
+        de_ue_upper: de_ue_upper {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp N0 &kp N0 &kp D &kp C>;
+        };
+        de_ue: de_ue {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&de_ue_lower>, <&de_ue_upper>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        de_eszett: de_eszett {
+            compatible = "zmk,behavior-macro";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp N0 &kp N0 &kp D &kp F>;
+        };
     };
 };
