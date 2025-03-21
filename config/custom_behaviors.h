@@ -1,48 +1,4 @@
-#include <dt-bindings/zmk/keys.h>
 
-/ {
-    behaviors {
-        // Define Unicode behaviors for German characters
-        de_ae: de_ae {
-            compatible = "zmk,behavior-unicode";
-            #binding-cells = <0>;
-            bindings = <&kp N0 &kp N0 &kp E &kp N4>; // ä
-        };
-        de_ae_shifted: de_ae_shifted {
-            compatible = "zmk,behavior-unicode";
-            #binding-cells = <0>;
-            bindings = <&kp N0 &kp N0 &kp C &kp N4>; // Ä
-        };
-
-        de_oe: de_oe {
-            compatible = "zmk,behavior-unicode";
-            #binding-cells = <0>;
-            bindings = <&kp N0 &kp N0 &kp F &kp N6>; // ö
-        };
-        de_oe_shifted: de_oe_shifted {
-            compatible = "zmk,behavior-unicode";
-            #binding-cells = <0>;
-            bindings = <&kp N0 &kp N0 &kp D &kp N6>; // Ö
-        };
-
-        de_ue: de_ue {
-            compatible = "zmk,behavior-unicode";
-            #binding-cells = <0>;
-            bindings = <&kp N0 &kp N0 &kp F &kp C>; // ü
-        };
-        de_ue_shifted: de_ue_shifted {
-            compatible = "zmk,behavior-unicode";
-            #binding-cells = <0>;
-            bindings = <&kp N0 &kp N0 &kp D &kp C>; // Ü
-        };
-
-        de_eszett: de_eszett {
-            compatible = "zmk,behavior-unicode";
-            #binding-cells = <0>;
-            bindings = <&kp N0 &kp N0 &kp D &kp F>; // ß
-        };
-    };
-};
 
 // autopair macros
 ZMK_BEHAVIOR(mbkt, macro,
