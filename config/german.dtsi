@@ -1,87 +1,45 @@
-#include "helper.h"
+#include <dt-bindings/zmk/keys.h>
 
 / {
     behaviors {
         // Define Unicode behaviors for German characters
-        de_ae_lower: de_ae_lower {
-            label = "DE_AE_LOWER"; // Add a unique label
-            compatible = "zmk,behavior-macro";
-            wait-ms = <0>;
-            tap-ms = <0>;
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp N0 &kp N0 &kp E &kp N4>; // ä
-        };
-        de_ae_upper: de_ae_upper {
-            label = "DE_AE_UPPER"; // Add a unique label
-            compatible = "zmk,behavior-macro";
-            wait-ms = <0>;
-            tap-ms = <0>;
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp N0 &kp N0 &kp C &kp N4>; // Ä
-        };
         de_ae: de_ae {
-            label = "DE_AE_MODMORPH"; // Add a unique label
-            compatible = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-unicode";
             #binding-cells = <0>;
-            bindings = <&de_ae_lower>, <&de_ae_upper>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N0 &kp N0 &kp E &kp N4>; // ä
+        };
+        de_ae_shifted: de_ae_shifted {
+            compatible = "zmk,behavior-unicode";
+            #binding-cells = <0>;
+            bindings = <&kp N0 &kp N0 &kp C &kp N4>; // Ä
         };
 
-        de_oe_lower: de_oe_lower {
-            label = "DE_OE_LOWER"; // Add a unique label
-            compatible = "zmk,behavior-macro";
-            wait-ms = <0>;
-            tap-ms = <0>;
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp N0 &kp N0 &kp F &kp N6>; // ö
-        };
-        de_oe_upper: de_oe_upper {
-            label = "DE_OE_UPPER"; // Add a unique label
-            compatible = "zmk,behavior-macro";
-            wait-ms = <0>;
-            tap-ms = <0>;
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp N0 &kp N0 &kp D &kp N6>; // Ö
-        };
         de_oe: de_oe {
-            label = "DE_OE_MODMORPH"; // Add a unique label
-            compatible = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-unicode";
             #binding-cells = <0>;
-            bindings = <&de_oe_lower>, <&de_oe_upper>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N0 &kp N0 &kp F &kp N6>; // ö
+        };
+        de_oe_shifted: de_oe_shifted {
+            compatible = "zmk,behavior-unicode";
+            #binding-cells = <0>;
+            bindings = <&kp N0 &kp N0 &kp D &kp N6>; // Ö
         };
 
-        de_ue_lower: de_ue_lower {
-            label = "DE_UE_LOWER"; // Add a unique label
-            compatible = "zmk,behavior-macro";
-            wait-ms = <0>;
-            tap-ms = <0>;
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp N0 &kp N0 &kp F &kp C>; // ü
-        };
-        de_ue_upper: de_ue_upper {
-            label = "DE_UE_UPPER"; // Add a unique label
-            compatible = "zmk,behavior-macro";
-            wait-ms = <0>;
-            tap-ms = <0>;
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp N0 &kp N0 &kp D &kp C>; // Ü
-        };
         de_ue: de_ue {
-            label = "DE_UE_MODMORPH"; // Add a unique label
-            compatible = "zmk,behavior-mod-morph";
+            compatible = "zmk,behavior-unicode";
             #binding-cells = <0>;
-            bindings = <&de_ue_lower>, <&de_ue_upper>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp N0 &kp N0 &kp F &kp C>; // ü
+        };
+        de_ue_shifted: de_ue_shifted {
+            compatible = "zmk,behavior-unicode";
+            #binding-cells = <0>;
+            bindings = <&kp N0 &kp N0 &kp D &kp C>; // Ü
         };
 
         de_eszett: de_eszett {
-            label = "DE_ESZETT"; // Add a unique label
-            compatible = "zmk,behavior-macro";
-            wait-ms = <0>;
-            tap-ms = <0>;
+            compatible = "zmk,behavior-unicode";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp N0 &kp N0 &kp D &kp F>; // ß
+            bindings = <&kp N0 &kp N0 &kp D &kp F>; // ß
         };
     };
 };
