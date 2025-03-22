@@ -54,7 +54,6 @@ hm_ss: homerow_mod_ss {
             label = "HOMEROW_MOD_SS";
     };
 
-behaviors {
     umlaut_o: umlaut_o {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
@@ -113,7 +112,6 @@ behaviors {
     };
 };
 
-};
 
 
 
