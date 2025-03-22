@@ -91,7 +91,7 @@
  ___            &kp Y         &kp X         &kp C         &kp V         &kp B                                          &kp N         &kp M         &kp SQT       &kp MINUS      &kp SEMI              ___
  ___            ___           ___           ___           ___                                                                        ___           ___           ___            ___                   ___
                                                                              ___           ___              ___            ___    
-                                                              < NUM BSPC  < FN ESC     ___              ___            < NAV RET  < SYM SPC
+                                                              &lt NUM BSPC  &lt FN ESC     ___              ___            &lt NAV RET  &lt SYM SPC
                                                                                            ___              ___
             >;
         };
