@@ -75,9 +75,10 @@ ger_oe: german_umlaut_o {
         &macro_tap &kp N4>,      // Tap '4' (Unicode hex digit)
         &macro_wait_time 20>,    // Very short delay before tapping 'Enter'
         &macro_tap &kp ENTER>    // Tap 'Enter' (finalize Unicode input)
-    ;
+    >;  // Note the change from ; to > here
     label = "GERMAN_UMLAUT_O";
 };
+
 
 
    german_eszett: german_eszett {
