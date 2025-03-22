@@ -7,10 +7,10 @@
 
 #include "adv360pro_keypos.h"
 #include "zmk_helper.h"
-#include "helper.h" 
-#include "german.dtsi" 
 
 #define ___ &trans
+
+
 
 /* Layer references  */
 #define QWERTY 0
@@ -30,54 +30,65 @@
 #include "custom_behaviors.h"
 
 /* combos */
+
 #undef COMBO_HOOK
 #define COMBO_HOOK global-quick-tap-ms = <100>;
 
+    
 / { /*start of device tree */
 
     behaviors {
-        // Define Unicode behaviors for German characters
-        de_ae: de_ae {
-            compatible = "zmk,behavior-unicode";
-            #binding-cells = <0>;
-            bindings = <&kp N0 &kp N0 &kp E &kp N4>; // ä
-        };
-        de_ae_shifted: de_ae_shifted {
-            compatible = "zmk,behavior-unicode";
-            #binding-cells = <0>;
-            bindings = <&kp N0 &kp N0 &kp C &kp N4>; // Ä
-        };
-
-        de_oe: de_oe {
-            compatible = "zmk,behavior-unicode";
-            #binding-cells = <0>;
-            bindings = <&kp N0 &kp N0 &kp F &kp N6>; // ö
-        };
-        de_oe_shifted: de_oe_shifted {
-            compatible = "zmk,behavior-unicode";
-            #binding-cells = <0>;
-            bindings = <&kp N0 &kp N0 &kp D &kp N6>; // Ö
-        };
-
-        de_ue: de_ue {
-            compatible = "zmk,behavior-unicode";
-            #binding-cells = <0>;
-            bindings = <&kp N0 &kp N0 &kp F &kp C>; // ü
-        };
-        de_ue_shifted: de_ue_shifted {
-            compatible = "zmk,behavior-unicode";
-            #binding-cells = <0>;
-            bindings = <&kp N0 &kp N0 &kp D &kp C>; // Ü
-        };
-
-        de_eszett: de_eszett {
-            compatible = "zmk,behavior-unicode";
-            #binding-cells = <0>;
-            bindings = <&kp N0 &kp N0 &kp D &kp F>; // ß
-        };
+    unicode_input: unicode_input {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&macro_press &kp LCTRL>, <&macro_press &kp LSHFT>, <&macro_tap &kp U>, <&macro_release &kp LSHFT>, <&macro_release &kp LCTRL>;
+        label = "UNICODE_INPUT";
+    };
+hm_ue: homerow_mod_ue {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&german_ue>;
+            label = "HOMEROW_MOD_UE";
     };
 
-    combos {
+};
+
+
+
+macros {
+    german_ae: german_ae {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_release &kp LALT>, <&macro_tap &kp A>;
+        label = "GERMAN_AE";
+    };
+    
+    german_oe: german_oe {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_release &kp LALT>, <&macro_tap &kp O>;
+        label = "GERMAN_OE";
+    };
+    
+    german_ue: german_ue {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_release &kp LALT>, <&macro_tap &kp U>;
+        label = "GERMAN_UE";
+    };
+    
+    german_eszett: german_eszett {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&macro_press &kp LALT>, <&macro_tap &kp S>, <&macro_release &kp LALT>;
+        label = "GERMAN_ESZETT";
+    };
+};
+
+   combos {
         compatible = "zmk,combos";
         
         combo_esc {
@@ -98,7 +109,7 @@
             bindings = <&kp RETURN>;
             layers = <0 1 2>;
         };
-        combo_tab {
+         combo_tab {
             timeout-ms = <20>;
             key-positions = <RT2 RT3>;
             bindings = <&kp TAB>;
@@ -116,6 +127,10 @@
             bindings = <&kp BSPC>;
             layers = <0 1 2>;
         };
+         
+
+
+
         combo_cut {
             timeout-ms = <20>;
             key-positions = <LB4 LB3>;
@@ -134,12 +149,15 @@
             bindings = <&kp LG(V)>;
             layers = <0 1 2>;
         };
-        combo_undo {
+       combo_undo {
             timeout-ms = <20>;
             key-positions = <LB4 LB1>;
             bindings = <&kp LG(Z)>;
             layers = <0 1 2>;
         };
+
+
+
         combo_qmark {
             timeout-ms = <20>;
             key-positions = <RB2 RB3>;
@@ -176,91 +194,113 @@
             bindings = <&kp SEMI>;
             layers = <0 1 2>;
         };
-    };
+};
+
+
+
+
 
     chosen {
         zmk,matrix_transform = &urobs_transform;
-    }; /* remove unused keys from layout and move thumb cluster to bottom */
+           }; /* remove unused keys from layout and move thumb cluster to bottom */
+
+
+
+
+
+
 
     keymap {
         compatible = "zmk,keymap";
-
+ 
         qwerty_layer {
             bindings = <
-                ___            ___           ___           ___           ___           ___            ___              ___            ___           ___           ___           ___             ___                  &mo MOD
-                ___            &kp Q         &kp W         &kp E         &kp R         &kp T          ___              ___            &kp Y         &kp U         &kp I         &kp O          &kp P                 ___
-                ___            &hml LGUI A  &hml LALT S   &hml LCTRL D   &hml LSHFT F  &kp G          ___              ___            &kp H         &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L    &hmr &de_ue           ___
-                ___            &kp Z         &kp X         &kp C         &kp V         &kp B                                          &kp N         &kp M         &de_ae        &de_eszett     &de_oe                ___
-                ___            ___           ___           ___           ___                                                                        ___           ___           ___            ___                   ___
-                                                                                        ___           ___              ___            ___    
-                                                                        &lt NUM BSPC  &lt FN ESC     ___              ___            &lt NAV RET  &lt SYM SPC
-                                                                                                   ___              ___
-            >;
-        };
+     ___            ___           ___           ___           ___           ___            ___              ___            ___           ___           ___           ___             ___                  &mo MOD
+     ___            &kp Q         &kp W         &kp E         &kp R         &kp T          ___              ___            &kp Y         &kp U         &kp I         &kp O          &kp P                 ___
+     ___            &hml LGUI A  &hml LALT S   &hml LCTRL D   &hml LSHFT F  &kp G          ___              ___            &kp H         &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L     ___                  ___
+     ___            &kp Z         &kp X         &kp C         &kp V         &kp B                                          &kp N         &kp M         &german_ae    &german_eszett &german_oe            ___
+     ___            ___           ___           ___           ___                                                                        ___           ___           ___            ___                   ___
+                                                                             ___           ___              ___            ___    
+                                                              &lt NUM BSPC  &lt FN ESC     ___              ___            &lt NAV RET  &lt SYM SPC
+                                                                                           ___              ___
+                    >;
+                    };
 
+
+
+        
         sym_layer {
-            bindings = <
-                ___            ___           ___           ___           ___           ___            ___              ___            ___           ___            ___          ___           ___            ___
-                ___            ___           &kp LT        SYM_DOLLAR    &kp GT        ___            ___              ___            ___           SYM_LBKT      &kp UNDER     SYM_RBKT       &msqt_morph   ___
-                &kp SQT        &kp BSLH      &kp LPAR      &kp DQT       &kp RPAR      &kp HASH       ___              ___            &kp PRCNT     &kp LBRC      &kp EQUAL     &kp RBRC       &kp PIPE      &kp GRAVE
-                ___            ___           SYM_MINUS     &kp STAR      SYM_PLUS      ___                                            ___           &kp AMPS      &kp CARET     &kp TILDE      ___           ___
-                ___            ___           ___           ___           ___                                                                        &kp LT        &kp GT        ___           ___            ___
-                                                                                     ___           ___              ___           ___
-                                                                   ___           ___           ___              ___           ___            ___
-                                                                                                   ___              ___
+          bindings = <
+     ___            ___           ___           ___           ___           ___            ___              ___            ___           ___            ___          ___           ___            ___
+     ___            ___           &kp LT        SYM_DOLLAR    &kp GT        ___            ___              ___            ___           SYM_LBKT      &kp UNDER     SYM_RBKT       &msqt_morph   ___
+     &kp SQT        &kp BSLH      &kp LPAR      &kp DQT       &kp RPAR      &kp HASH       ___              ___            &kp PRCNT     &kp LBRC      &kp EQUAL     &kp RBRC       &kp PIPE      &kp GRAVE
+     ___            ___           SYM_MINUS     &kp STAR      SYM_PLUS      ___                                            ___           &kp AMPS      &kp CARET     &kp TILDE      ___           ___
+     ___            ___           ___           ___           ___                                                                        &kp LT        &kp GT        ___           ___            ___
+                                                                             ___           ___              ___           ___
+                                                               ___           ___           ___              ___           ___            ___
+                                                                                           ___              ___
             >;
         };
 
         num_layer {
             bindings = <
-                ___            ___           ___           ___           ___           ___             ___              ___            ___          ___           ___           ___           ___            ___
-                ___            &kp HASH      &kp LT         SYM_DOLLAR   &kp GT        ___             ___              ___            &mbrc        &kp N7        &kp N8        &kp N9        ___            ___
-                ___            SYM_CARET     SYM_MINUS      &kp DQT      &kp RPAR      &kp HASH        ___              ___            &mbkt        &kp N4        &kp N5        &kp N6        ___            ___
-                &num_word      &kp BSLH      &kp STAR      &kp COMMA      SYM_PLUS       ___                                           &mpar        &kp N1        &kp N2        &kp N3        ___            ___
-                ___            ___           ___           ___           ___                                                                        ___           ___           ___           ___            ___
-                                                                                     ___           ___              ___           ___
-                                                                   ___           ___           ___              ___           ___           &kp N0
-                                                                                                   ___              ___
-            >;
-        };
+     ___            ___           ___           ___           ___           ___             ___              ___            ___          ___           ___           ___           ___            ___
+     ___            &kp HASH      &kp LT         SYM_DOLLAR   &kp GT        ___             ___              ___            &mbrc        &kp N7        &kp N8        &kp N9        ___            ___
+     ___            SYM_CARET     SYM_MINUS      &kp DQT      &kp RPAR      &kp HASH        ___              ___            &mbkt        &kp N4        &kp N5        &kp N6        ___            ___
+     &num_word      &kp BSLH      &kp STAR      &kp COMMA      SYM_PLUS       ___                                           &mpar        &kp N1        &kp N2        &kp N3        ___            ___
+     ___            ___           ___           ___           ___                                                                        ___           ___           ___           ___            ___
+                                                                             ___           ___              ___           ___
+                                                               ___           ___           ___              ___           ___           &kp N0
+                                                                                           ___              ___
+                    >;
+                    };
+
+
+       
+
+
+        
 
         nav_layer {
             bindings = <
-                ___            ___           ___           ___           ___           ___            ___              ___            ___           ___           ___           ___           ___            ___
-                ___            SPC_UNDO      SPC_LEFT      SPC_UP        SPC_DOWN      SPC_RIGHT      SPC_MVL          ___            ___           ___           ___           ___           ___            ___
-                ___            &sk LGUI      &sk LALT      &sk LCTRL     &sk LSHFT     SPC_FULL       SPC_MVR          ___            ___           &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT      ___
-                ___            PREV_WINDOW   NEXT_WINDOW   SWAP_PREV     SWAPPER       ___                                            ___           ___           ___           ___           ___            ___
-                ___            ___           ___           ___           ___                                                                        ___           ___           ___           ___            ___
-                                                                                     ___           ___              ___           ___
-                                                                   ___           ___           ___              ___           ___           ___
-                                                                                                   ___              ___
+     ___            ___           ___           ___           ___           ___            ___              ___            ___           ___           ___           ___           ___            ___
+     ___            SPC_UNDO      SPC_LEFT      SPC_UP        SPC_DOWN      SPC_RIGHT      SPC_MVL          ___            ___           ___           ___           ___           ___            ___
+     ___            &sk LGUI      &sk LALT      &sk LCTRL     &sk LSHFT     SPC_FULL       SPC_MVR          ___            ___           &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT      ___
+     ___            PREV_WINDOW   NEXT_WINDOW   SWAP_PREV     SWAPPER       ___                                            ___           ___           ___           ___           ___            ___
+     ___            ___           ___           ___           ___                                                                        ___           ___           ___           ___            ___
+                                                                             ___           ___              ___           ___
+                                                               ___           ___           ___              ___           ___           ___
+                                                                                           ___              ___
             >;
         };
 
-        fn_layer {
+         fn_layer {
             bindings = <
-                ___            ___           ___           ___            ___          ___            ___              ___            ___           &kp F10       &kp F11       &kp F12       ___            ___
-                ___            ___           ___           ___           ___           ___            ___              ___            ___           &kp F7        &kp F8        &kp F9        ___            ___
-                ___            ___           ___           ___           ___           ___            ___              ___            ___           &kp F4        &kp F5        &kp F6        ___            ___
-                ___            ___           ___           ___           ___           ___                                            ___           &kp F1        &kp F2        &kp F3        ___            ___
-                ___            ___           ___           ___           ___                                                                        ___           ___           ___           ___            ___
-                                                                                     ___           ___              ___           ___
-                                                                   &kp C_BRI_DN  &kp C_BRI_UP  ___              ___           ___           ___
-                                                                                                   LOCK_SCRN        ___
+     ___            ___           ___           ___            ___          ___            ___              ___            ___           &kp F10       &kp F11       &kp F12       ___            ___
+     ___            ___           ___           ___           ___           ___            ___              ___            ___           &kp F7        &kp F8        &kp F9        ___            ___
+     ___            ___           ___           ___           ___           ___            ___              ___            ___           &kp F4        &kp F5        &kp F6        ___            ___
+     ___            ___           ___           ___           ___           ___                                            ___           &kp F1        &kp F2        &kp F3        ___            ___
+     ___            ___           ___           ___           ___                                                                        ___           ___           ___           ___            ___
+                                                                             ___           ___              ___           ___
+                                                               &kp C_BRI_DN  &kp C_BRI_UP  ___              ___           ___           ___
+                                                                                           LOCK_SCRN        ___
             >;
         };
 
         mod_layer {
             bindings = <
-                ___            BT_0          BT_1          BT_2          BT_3          BT_4           ___              ___            BT_0          BT_1          BT_2          BT_3          BT_4           ___
-                ___            ___           &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  ___            ___              ___            ___           ___           ___           ___           ___            ___
-                ___            ___           &kp C_PREV    &kp C_PP      &kp C_NEXT    ___            ___              ___            ___           ___           ___           ___           ___            ___
-                ___            ___           ___           ___           ___           ___                                            ___           ___           ___           ___           ___            ___
-                ___            ___           ___           ___           ___                                                                        &bl BL_DEC    &bl BL_INC    ___           ___            ___
-                                                                                     &bootloader   ___              ___           &bootloader
-                                                                   &bl BL_DEC    &bl BL_INC    &bt BT_CLR       &bt BT_CLR    &kp C_PP      &kp C_MUTE
-                                                                                                   &bl BL_TOG      ___
+
+     ___            BT_0          BT_1          BT_2          BT_3          BT_4           ___              ___            BT_0          BT_1          BT_2          BT_3          BT_4           ___
+     ___            ___           &kp C_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  ___            ___              ___            ___           ___           ___           ___           ___            ___
+     ___            ___           &kp C_PREV    &kp C_PP      &kp C_NEXT    ___            ___              ___            ___           ___           ___           ___           ___            ___
+     ___            ___           ___           ___           ___           ___                                            ___           ___           ___           ___           ___            ___
+     ___            ___           ___           ___           ___                                                                        &bl BL_DEC    &bl BL_INC    ___           ___            ___
+                                                                             &bootloader   ___              ___           &bootloader
+                                                               &bl BL_DEC    &bl BL_INC    &bt BT_CLR       &bt BT_CLR    &kp C_PP      &kp C_MUTE
+                                                                                           &bl BL_TOG      ___
             >;
         };
+
+
     };
 };
