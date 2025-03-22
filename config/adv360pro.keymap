@@ -59,31 +59,29 @@ hm_ue: homerow_mod_ue {
 
 
 macros {
-    german_ae: german_ae {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_release &kp LALT>, <&macro_tap &kp A>;
-        label = "GERMAN_AE";
-    };
-    
     german_oe: german_oe {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_release &kp LALT>, <&macro_tap &kp O>;
+        bindings = <¯o_press &kp LALT>, <¯o_tap &kp U>, <¯o_wait 20>, <¯o_release &kp LALT>, <¯o_wait 20>, <¯o_tap &kp O>;
         label = "GERMAN_OE";
     };
-    
+    // Keep other macros as they are unless they also show issues
+    german_ae: german_ae {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <¯o_press &kp LALT>, <¯o_tap &kp U>, <¯o_wait 20>, <¯o_release &kp LALT>, <¯o_wait 20>, <¯o_tap &kp A>;
+        label = "GERMAN_AE";
+    };
     german_ue: german_ue {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_release &kp LALT>, <&macro_tap &kp U>;
+        bindings = <¯o_press &kp LALT>, <¯o_tap &kp U>, <¯o_wait 20>, <¯o_release &kp LALT>, <¯o_wait 20>, <¯o_tap &kp U>;
         label = "GERMAN_UE";
     };
-    
     german_eszett: german_eszett {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
-        bindings = <&macro_press &kp LALT>, <&macro_tap &kp S>, <&macro_release &kp LALT>;
+        bindings = <¯o_press &kp LALT>, <¯o_tap &kp S>, <¯o_release &kp LALT>;
         label = "GERMAN_ESZETT";
     };
 };
