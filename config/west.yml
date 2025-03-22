@@ -7,7 +7,7 @@ manifest:
   projects:
     - name: zmk
       remote: cosmicbuffalo
-      revision: adv360-led
+      revision: main
       import: app/west.yml
   self:
     path: config
