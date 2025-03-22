@@ -35,105 +35,105 @@
 / { /*start of device tree */
 
     combos {
-    compatible = "zmk,combos";
-    
-    combo_esc {
-        timeout-ms = <20>;
-        key-positions = <LT3 LT2>;
-        bindings = <&kp ESC>;
-        layers = <0 1 2>;
+        compatible = "zmk,combos";
+        
+        combo_esc {
+            timeout-ms = <20>;
+            key-positions = <LT3 LT2>;
+            bindings = <&kp ESC>;
+            layers = <0 1 2>;
+        };
+        combo_space {
+            timeout-ms = <20>;
+            key-positions = <RM1 RM2>;
+            bindings = <&kp SPACE>;
+            layers = <0 1 2>;
+        };
+        combo_ret {
+            timeout-ms = <20>;
+            key-positions = <RM0 RM1>;
+            bindings = <&kp RETURN>;
+            layers = <0 1 2>;
+        };
+        combo_tab {
+            timeout-ms = <20>;
+            key-positions = <RT2 RT3>;
+            bindings = <&kp TAB>;
+            layers = <0 1 2>;
+        };
+        combo_shift_tab {
+            timeout-ms = <50>;
+            key-positions = <RT1 RT2>; 
+            bindings = <&kp LS(TAB)>;
+            layers = <0 1 2>;
+        };
+        combo_bspc {
+            timeout-ms = <20>;
+            key-positions = <LM1 LM0>;
+            bindings = <&kp BSPC>;
+            layers = <0 1 2>;
+        };
+        combo_cut {
+            timeout-ms = <20>;
+            key-positions = <LB4 LB3>;
+            bindings = <&kp LG(X)>;
+            layers = <0 1 2>;
+        };
+        combo_copy {
+            timeout-ms = <20>;
+            key-positions = <LB3 LB2>;
+            bindings = <&kp LG(C)>;
+            layers = <0 1 2>;
+        };
+        combo_paste {
+            timeout-ms = <20>;
+            key-positions = <LB2 LB1>;
+            bindings = <&kp LG(V)>;
+            layers = <0 1 2>;
+        };
+        combo_undo {
+            timeout-ms = <20>;
+            key-positions = <LB4 LB1>;
+            bindings = <&kp LG(Z)>;
+            layers = <0 1 2>;
+        };
+        combo_qmark {
+            timeout-ms = <20>;
+            key-positions = <RB2 RB3>;
+            bindings = <&kp QMARK>;
+            layers = <0 1 2>;
+        };
+        combo_excl {
+            timeout-ms = <20>;
+            key-positions = <RB1 RB4>;
+            bindings = <&kp EXCL>;
+            layers = <0 1 2>;
+        };
+        combo_dot {
+            timeout-ms = <20>;
+            key-positions = <RB1 RB2>;
+            bindings = <&kp DOT>;
+            layers = <0 1 2>;
+        };
+        combo_colon {
+            timeout-ms = <20>;
+            key-positions = <RB1 RB3>;
+            bindings = <&kp COLON>;
+            layers = <0 1 2>;
+        };
+        combo_comma {
+            timeout-ms = <20>;
+            key-positions = <RB3 RB4>;
+            bindings = <&kp COMMA>;
+            layers = <0 1 2>;
+        };
+        combo_semi {
+            timeout-ms = <20>;
+            key-positions = <RB2 RB4>;
+            bindings = <&kp SEMI>;
+            layers = <0 1 2>;
+        };
     };
-    combo_space {
-        timeout-ms = <20>;
-        key-positions = <RM1 RM2>;
-        bindings = <&kp SPACE>;
-        layers = <0 1 2>;
-    };
-    combo_ret {
-        timeout-ms = <20>;
-        key-positions = <RM0 RM1>;
-        bindings = <&kp RETURN>;
-        layers = <0 1 2>;
-    };
-    combo_tab {
-        timeout-ms = <20>;
-        key-positions = <RT2 RT3>;
-        bindings = <&kp TAB>;
-        layers = <0 1 2>;
-    };
-    combo_shift_tab {
-        timeout-ms = <50>;
-        key-positions = <RT1 RT2>; 
-        bindings = <&kp LS(TAB)>;
-        layers = <0 1 2>;
-    };
-    combo_bspc {
-        timeout-ms = <20>;
-        key-positions = <LM1 LM0>;
-        bindings = <&kp BSPC>;
-        layers = <0 1 2>;
-    };
-    combo_cut {
-        timeout-ms = <20>;
-        key-positions = <LB4 LB3>;
-        bindings = <&kp LG(X)>;
-        layers = <0 1 2>;
-    };
-    combo_copy {
-        timeout-ms = <20>;
-        key-positions = <LB3 LB2>;
-        bindings = <&kp LG(C)>;
-        layers = <0 1 2>;
-    };
-    combo_paste {
-        timeout-ms = <20>;
-        key-positions = <LB2 LB1>;
-        bindings = <&kp LG(V)>;
-        layers = <0 1 2>;
-    };
-    combo_undo {
-        timeout-ms = <20>;
-        key-positions = <LB4 LB1>;
-        bindings = <&kp LG(Z)>;
-        layers = <0 1 2>;
-    };
-    combo_qmark {
-        timeout-ms = <20>;
-        key-positions = <RB2 RB3>;
-        bindings = <&kp QMARK>;  // Fixed: Use QMARK instead of DE_QUES
-        layers = <0 1 2>;
-    };
-    combo_excl {
-        timeout-ms = <20>;
-        key-positions = <RB1 RB4>;
-        bindings = <&kp EXCL>;  // Fixed: Use EXCL instead of DE_EXCL
-        layers = <0 1 2>;
-    };
-    combo_dot {
-        timeout-ms = <20>;
-        key-positions = <RB1 RB2>;
-        bindings = <&kp DOT>;  // Fixed: Use DOT instead of DE_DOT
-        layers = <0 1 2>;
-    };
-    combo_colon {
-        timeout-ms = <20>;
-        key-positions = <RB1 RB3>;
-        bindings = <&kp COLON>;  // Fixed: Use COLON instead of DE_COLN
-        layers = <0 1 2>;
-    };
-    combo_comma {
-        timeout-ms = <20>;
-        key-positions = <RB3 RB4>;
-        bindings = <&kp COMMA>;  // Fixed: Use COMMA instead of DE_COMM
-        layers = <0 1 2>;
-    };
-    combo_semi {
-        timeout-ms = <20>;
-        key-positions = <RB2 RB4>;
-        bindings = <&kp SEMI>;  // Fixed: Use SEMI instead of DE_SCLN
-        layers = <0 1 2>;
-    };
-};
 
     chosen {
         zmk,matrix_transform = &urobs_transform;
@@ -145,9 +145,9 @@
         qwerty_layer {
             bindings = <
      ___            ___           ___           ___           ___           ___            ___              ___            ___           ___           ___           ___             ___                  &mo MOD
-     ___            &kp DE_Q      &kp DE_W      &kp DE_E      &kp DE_R      &kp DE_T       ___              ___            &kp DE_Z      &kp DE_U      &kp DE_I      &kp DE_O       &kp DE_P             ___
-     ___            &hml LGUI A  &hml LALT S   &hml LCTRL D  &hml LSHFT F  &kp DE_G       ___              ___            &kp DE_H      &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L    &hmr RGUI SEMI        ___
-     ___            &kp DE_Y     &kp DE_X      &kp DE_C      &kp DE_V      &kp DE_B                                          &kp DE_N      &kp DE_M      &kp DE_COMM   &kp DE_MINS   &kp DE_DOT          ___
+     ___            &kp Q         &kp W         &kp E         &kp R         &kp T          ___              ___            &kp Z         &kp U         &kp I         &kp O          &kp P                 ___
+     ___            &hml LGUI A  &hml LALT S   &hml LCTRL D  &hml LSHFT F  &kp G          ___              ___            &kp H         &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L    &hmr RGUI SEMI        ___
+     ___            &kp Y         &kp X         &kp C         &kp V         &kp B                                          &kp N         &kp M         &kp COMMA     &kp MINUS      &kp DOT              ___
      ___            ___           ___           ___           ___                                                                        ___           ___           ___            ___                   ___
                                                                              ___           ___              ___            ___    
                                                               &lt NUM BSPC  &lt FN ESC     ___              ___            &lt NAV RET  &lt SYM SPC
@@ -158,10 +158,10 @@
         sym_layer {
             bindings = <
      ___            ___           ___           ___           ___           ___            ___              ___            ___           ___            ___          ___           ___            ___
-     ___            ___           &kp DE_LABK   SYM_DOLLAR    &kp DE_RABK  ___            ___              ___            ___           SYM_LBKT      &kp DE_UNDS  SYM_RBKT       &msqt_morph   ___
-     &kp DE_QUOT    &kp DE_BSLS   &kp DE_LPRN   &kp DE_DQUO   &kp DE_RPRN  &kp DE_HASH    ___              ___            &kp DE_PERC   &kp DE_LBRC   &kp DE_EQL   &kp DE_RBRC   &kp DE_PIPE   &kp DE_GRV
-     ___            ___           SYM_MINUS     &kp DE_ASTR   SYM_PLUS     ___                                            ___           &kp DE_AMPR   &kp DE_CIRC  &kp DE_TILD   ___           ___
-     ___            ___           ___           ___           ___                                                                        &kp DE_LABK   &kp DE_RABK  ___           ___            ___
+     ___            ___           &kp LESS_THAN  SYM_DOLLAR    &kp GREATER_THAN  ___            ___              ___            ___           SYM_LBKT      &kp UNDER     SYM_RBKT       &msqt_morph   ___
+     &kp SQT        &kp BSLH      &kp LPAR      &kp DQT       &kp RPAR      &kp HASH       ___              ___            &kp PRCNT     &kp LBRC      &kp EQUAL     &kp RBRC       &kp PIPE      &kp GRAVE
+     ___            ___           SYM_MINUS     &kp STAR      SYM_PLUS      ___                                            ___           &kp AMPS      &kp CARET     &kp TILDE      ___           ___
+     ___            ___           ___           ___           ___                                                                        &kp LESS_THAN  &kp GREATER_THAN  ___           ___            ___
                                                                              ___           ___              ___           ___
                                                                ___           ___           ___              ___           ___            ___
                                                                                            ___              ___
@@ -171,12 +171,12 @@
         num_layer {
             bindings = <
      ___            ___           ___           ___           ___           ___             ___              ___            ___          ___           ___           ___           ___            ___
-     ___            &kp DE_HASH   &kp DE_LABK   SYM_DOLLAR    &kp DE_RABK  ___             ___              ___            &mbrc        &kp DE_7      &kp DE_8      &kp DE_9      ___            ___
-     ___            SYM_CARET     SYM_MINUS     &kp DE_DQUO   &kp DE_RPRN  &kp DE_HASH     ___              ___            &mbkt        &kp DE_4      &kp DE_5      &kp DE_6      ___            ___
-     &num_word      &kp DE_BSLS   &kp DE_ASTR   &kp DE_COMM   SYM_PLUS     ___                                            &mpar        &kp DE_1      &kp DE_2      &kp DE_3      ___            ___
+     ___            &kp HASH      &kp LESS_THAN  SYM_DOLLAR    &kp GREATER_THAN  ___             ___              ___            &mbrc        &kp N7        &kp N8        &kp N9        ___            ___
+     ___            SYM_CARET     SYM_MINUS      &kp DQT      &kp RPAR      &kp HASH        ___              ___            &mbkt        &kp N4        &kp N5        &kp N6        ___            ___
+     &num_word      &kp BSLH      &kp STAR      &kp COMMA      SYM_PLUS       ___                                           &mpar        &kp N1        &kp N2        &kp N3        ___            ___
      ___            ___           ___           ___           ___                                                                        ___           ___           ___           ___            ___
                                                                              ___           ___              ___           ___
-                                                               ___           ___           ___              ___           ___           &kp DE_0
+                                                               ___           ___           ___              ___           ___           &kp N0
                                                                                            ___              ___
             >;
         };
@@ -197,7 +197,7 @@
         fn_layer {
             bindings = <
      ___            ___           ___           ___            ___          ___            ___              ___            ___           &kp F10       &kp F11       &kp F12       ___            ___
-     ___            ___           ___           ___           ___           ___            ___              ___            ___           &kp F8        &kp F8        &kp F9        ___            ___
+     ___            ___           ___           ___           ___           ___            ___              ___            ___           &kp A        &kp F8        &kp F9        ___            ___
      ___            ___           ___           ___           ___           ___            ___              ___            ___           &kp F4        &kp F5        &kp F6        ___            ___
      ___            ___           ___           ___           ___           ___                                            ___           &kp F1        &kp F2        &kp F3        ___            ___
      ___            ___           ___           ___           ___                                                                        ___           ___           ___           ___            ___
