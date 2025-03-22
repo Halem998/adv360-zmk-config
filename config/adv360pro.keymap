@@ -59,6 +59,27 @@ hm_ss: homerow_mod_ss {
 
 
 macros {
+
+ger_oe: german_umlaut_o {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <
+        &macro_press &kp LCTRL>, // Hold Ctrl
+        &macro_press &kp LSHFT>, // Hold Shift
+        &macro_tap &kp U>,       // Tap U (start Unicode input)
+        &macro_release &kp LSHFT>, // Release Shift
+        &macro_release &kp LCTRL>, // Release Ctrl
+        &macro_wait_time 30>,    // Short delay before tapping 'o'
+        &macro_tap &kp O>,       // Tap 'o' (base character)
+        &macro_wait_time 30>,    // Short delay after tapping 'o'
+        &macro_tap &kp N4>,      // Tap '4' (Unicode hex digit)
+        &macro_wait_time 20>,    // Very short delay before tapping 'Enter'
+        &macro_tap &kp ENTER>    // Tap 'Enter' (finalize Unicode input)
+    ;
+    label = "GERMAN_UMLAUT_O";
+};
+
+
    german_eszett: german_eszett {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
@@ -197,7 +218,7 @@ macros {
      ___            ___           ___           ___           ___           ___            ___              ___            ___           ___           ___           ___             ___                  &mo MOD
      ___            &kp Q         &kp W         &kp E         &kp R         &kp T          ___              ___            &kp Y         &kp U         &kp I         &kp O          &kp P                  ___
      ___            &hml LGUI A  &hml LALT S   &hml LCTRL D   &hml LSHFT F  &kp G          ___              ___            &kp H         &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L    &hm_ss RGUI 0          ___
-     ___            &kp Z         &kp X         &kp C         &kp V         &kp B                                          &kp N         &kp M         ___           ___             ___                   ___
+     ___            &kp Z         &kp X         &kp C         &kp V         &kp B                                          &kp N         &kp M         &ger_oe           ___             ___                   ___
      ___            ___           ___           ___           ___                                                                        ___           ___           ___             ___                   ___
                                                                              ___           ___              ___            ___    
                                                               &lt NUM BSPC  &lt FN ESC     ___              ___            &lt NAV RET  &lt SYM SPC
