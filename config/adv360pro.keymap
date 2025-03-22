@@ -54,6 +54,65 @@ hm_ss: homerow_mod_ss {
             label = "HOMEROW_MOD_SS";
     };
 
+behaviors {
+    umlaut_o: umlaut_o {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <
+            &macro_press &kp LCTRL>,      // Hold Ctrl
+            &macro_press &kp LSHFT>,      // Hold Shift
+            &macro_tap &kp U>,            // Tap U (start Unicode input)
+            &macro_release &kp LSHFT>,    // Release Shift
+            &macro_release &kp LCTRL>,    // Release Ctrl
+            &macro_wait_time 20>,         // Add a small delay
+            &macro_tap &kp N0>,           // Tap 0
+            &macro_tap &kp N0>,           // Tap 0
+            &macro_tap &kp F>,            // Tap F
+            &macro_tap &kp N6>,           // Tap 6
+            &macro_tap &kp ENTER>         // Tap Enter (finalize Unicode input)
+        ;
+        label = "UMLAUT_O";
+    };
+
+    umlaut_a: umlaut_a {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <
+            &macro_press &kp LCTRL>,
+            &macro_press &kp LSHFT>,
+            &macro_tap &kp U>,
+            &macro_release &kp LSHFT>,
+            &macro_release &kp LCTRL>,
+            &macro_wait_time 20>,
+            &macro_tap &kp N0>,
+            &macro_tap &kp N0>,
+            &macro_tap &kp E>,
+            &macro_tap &kp N4>,
+            &macro_tap &kp ENTER>
+        ;
+        label = "UMLAUT_A";
+    };
+
+    umlaut_u: umlaut_u {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <
+            &macro_press &kp LCTRL>,
+            &macro_press &kp LSHFT>,
+            &macro_tap &kp U>,
+            &macro_release &kp LSHFT>,
+            &macro_release &kp LCTRL>,
+            &macro_wait_time 20>,
+            &macro_tap &kp N0>,
+            &macro_tap &kp N0>,
+            &macro_tap &kp F>,
+            &macro_tap &kp C>,
+            &macro_tap &kp ENTER>
+        ;
+        label = "UMLAUT_U";
+    };
+};
+
 };
 
 
