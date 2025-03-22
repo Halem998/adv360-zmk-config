@@ -34,6 +34,15 @@
 
 / { /*start of device tree */
 
+    behaviors {
+        unicode_input: unicode_input {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LCTRL>, <&macro_press &kp LSHFT>, <&macro_tap &kp U>, <&macro_release &kp LSHFT>, <&macro_release &kp LCTRL>;
+            label = "UNICODE_INPUT";
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
         
@@ -146,8 +155,8 @@
             bindings = <
      ___            ___           ___           ___           ___           ___            ___              ___            ___           ___           ___           ___             ___                  &mo MOD
      ___            &kp Q         &kp W         &kp E         &kp R         &kp T          ___              ___            &kp Z         &kp U         &kp I         &kp O          &kp P                 ___
-     ___            &hml LGUI A  &hml LALT S   &hml LCTRL D  &hml LSHFT F  &kp G          ___              ___            &kp H         &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L    &hmr RGUI SEMI        ___
-     ___            &kp Y         &kp X         &kp C         &kp V         &kp B                                          &kp N         &kp M         &kp COMMA     &kp MINUS      &kp DOT              ___
+     ___            &hml LGUI A  &hml LALT S   &hml LCTRL D  &hml LSHFT F  &kp G          ___              ___            &kp H         &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L    &hmr RGUI SQT          ___
+     ___            &kp Y         &kp X         &kp C         &kp V         &kp B                                          &kp N         &kp M         &kp LBKT     &kp MINUS      &kp SEMI              ___
      ___            ___           ___           ___           ___                                                                        ___           ___           ___            ___                   ___
                                                                              ___           ___              ___            ___    
                                                               &lt NUM BSPC  &lt FN ESC     ___              ___            &lt NAV RET  &lt SYM SPC
@@ -158,10 +167,10 @@
         sym_layer {
             bindings = <
      ___            ___           ___           ___           ___           ___            ___              ___            ___           ___            ___          ___           ___            ___
-     ___            ___           &kp LESS_THAN  SYM_DOLLAR    &kp GREATER_THAN  ___            ___              ___            ___           SYM_LBKT      &kp UNDER     SYM_RBKT       &msqt_morph   ___
+     ___            ___           &kp LT        SYM_DOLLAR    &kp GT        ___            ___              ___            ___           SYM_LBKT      &kp UNDER     SYM_RBKT       &msqt_morph   ___
      &kp SQT        &kp BSLH      &kp LPAR      &kp DQT       &kp RPAR      &kp HASH       ___              ___            &kp PRCNT     &kp LBRC      &kp EQUAL     &kp RBRC       &kp PIPE      &kp GRAVE
      ___            ___           SYM_MINUS     &kp STAR      SYM_PLUS      ___                                            ___           &kp AMPS      &kp CARET     &kp TILDE      ___           ___
-     ___            ___           ___           ___           ___                                                                        &kp LESS_THAN  &kp GREATER_THAN  ___           ___            ___
+     ___            ___           ___           ___           ___                                                                        &kp LT        &kp GT        ___           ___            ___
                                                                              ___           ___              ___           ___
                                                                ___           ___           ___              ___           ___            ___
                                                                                            ___              ___
@@ -171,7 +180,7 @@
         num_layer {
             bindings = <
      ___            ___           ___           ___           ___           ___             ___              ___            ___          ___           ___           ___           ___            ___
-     ___            &kp HASH      &kp LESS_THAN  SYM_DOLLAR    &kp GREATER_THAN  ___             ___              ___            &mbrc        &kp N7        &kp N8        &kp N9        ___            ___
+     ___            &kp HASH      &kp LT         SYM_DOLLAR   &kp GT        ___             ___              ___            &mbrc        &kp N7        &kp N8        &kp N9        ___            ___
      ___            SYM_CARET     SYM_MINUS      &kp DQT      &kp RPAR      &kp HASH        ___              ___            &mbkt        &kp N4        &kp N5        &kp N6        ___            ___
      &num_word      &kp BSLH      &kp STAR      &kp COMMA      SYM_PLUS       ___                                           &mpar        &kp N1        &kp N2        &kp N3        ___            ___
      ___            ___           ___           ___           ___                                                                        ___           ___           ___           ___            ___
