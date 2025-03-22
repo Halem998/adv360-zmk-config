@@ -50,7 +50,7 @@ hm_ss: homerow_mod_ss {
             tapping-term-ms = <200>;
             quick-tap-ms = <125>;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&german_eszett>;
+            bindings = <&kp>, <&de_eszett>;
             label = "HOMEROW_MOD_SS";
     };
 
@@ -59,28 +59,28 @@ hm_ss: homerow_mod_ss {
 
 
 macros {
-   german_eszett: german_eszett {
+   de_eszett: german_eszett {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&macro_press &kp LALT>, <&macro_tap &kp S>, <&macro_release &kp LALT>;
         label = "GERMAN_ESZETT";
     };
 
-    german_ae: german_ae {
+    de_ae: german_ae {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_release &kp LALT>, <&macro_tap &kp A>;
         label = "GERMAN_AE";
     };
     
-    german_oe: german_oe {
+    de_oe: german_oe {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_release &kp LALT>, <&macro_tap &kp O>;
         label = "GERMAN_OE";
     };
     
-    german_ue: german_ue {
+    de_ue: german_ue {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_release &kp LALT>, <&macro_tap &kp U>;
@@ -219,7 +219,7 @@ macros {
      ___            ___           ___           ___           ___           ___            ___              ___            ___           ___           ___           ___             ___                  &mo MOD
      ___            &kp Q         &kp W         &kp E         &kp R         &kp T          ___              ___            &kp Y         &kp U         &kp I         &kp O          &kp P                  ___
      ___            &hml LGUI A  &hml LALT S   &hml LCTRL D   &hml LSHFT F  &kp G          ___              ___            &kp H         &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L    &hm_ss RGUI 0          ___
-     ___            &kp Z         &kp X         &kp C         &kp V         &kp B                                          &kp N         &kp M         &kp german_ae &kp german_oe  &kp german_ue          ___
+     ___            &kp Z         &kp X         &kp C         &kp V         &kp B                                          &kp N         &kp M         &kp de_ae     &kp de_oe      &kp de_ue              ___
      ___            ___           ___           ___           ___                                                                        ___           ___           ___             ___                   ___
                                                                              ___           ___              ___            ___    
                                                               &lt NUM BSPC  &lt FN ESC     ___              ___            &lt NAV RET  &lt SYM SPC
