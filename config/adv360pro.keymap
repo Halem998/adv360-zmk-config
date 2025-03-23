@@ -44,15 +44,18 @@
         bindings = <&macro_press &kp LCTRL>, <&macro_press &kp LSHFT>, <&macro_tap &kp U>, <&macro_release &kp LSHFT>, <&macro_release &kp LCTRL>;
         label = "UNICODE_INPUT";
     };
+
 hm_ae: homerow_mod_ae {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <10>;
-            quick-tap-ms = <10>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&ae_de>;
+            tapping-term-ms = <200>;  // Tap/hold threshold
+            quick-tap-ms = <150>;     // Prevents repeat tap issues
+            flavor = "tap-preferred"; // Prioritizes tap action
+            bindings = <&ae_de>, <&kp RGUI>;  // Tap: ae_macro, Hold: RGUI
             label = "HOMEROW_MOD_AE";
-    };
+        };
+
+
 
 };
 
@@ -62,7 +65,7 @@ macros {
          ae_de: ae_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <1>; // Added wait time
+            wait-ms = <0>; // Added wait time
             tap-ms = <1>;  // Added tap time
             bindings = <&kp A &kp E>;
             label = "AE_MACRO"; // Added label
