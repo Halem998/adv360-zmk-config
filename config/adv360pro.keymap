@@ -64,22 +64,29 @@ macros {
         #binding-cells = <0>;
         bindings = <&macro_press &kp LALT>, <&macro_tap &kp S>, <&macro_release &kp LALT>;
         label = "GERMAN_ESZETT";
-    };
+        };
+        
         ae_de: ae_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp A &kp E>;
+        label = "AE_MACRO"; // Added label
         };
+
         oe_de: oe_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp O &kp E>;
+        label = "OE_MACRO"; // Added label
         };
+
+
         ue_de: ue_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp U &kp E>;
-        };
+            label = "UE_MACRO"; // Added label
+            };
 };
 
    combos {
