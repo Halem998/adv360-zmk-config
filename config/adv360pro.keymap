@@ -37,14 +37,6 @@
     
 / { /*start of device tree */
 
-    behaviors {
-    unicode_input: unicode_input {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&macro_press &kp LCTRL>, <&macro_press &kp LSHFT>, <&macro_tap &kp U>, <&macro_release &kp LSHFT>, <&macro_release &kp LCTRL>;
-        label = "UNICODE_INPUT";
-        };
-    };
 
 
    combos {
