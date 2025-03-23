@@ -78,13 +78,19 @@ macros {
     };
     
     de_oe: german_oe {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        wait-ms = <20>; // Added wait time
-        tap-ms = <20>;  // Added tap time
-        bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_release &kp LALT>, <&macro_tap &kp O>;
-        label = "GERMAN_OE";
-    };
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <30>;
+    tap-ms = <30>;
+    bindings = 
+        <&macro_press &kp LALT>, 
+        <&macro_tap &kp U>, 
+        <&macro_release &kp LALT>,
+        <&macro_wait_time 10>, // Add a small delay here
+        <&macro_tap &kp O>;
+    label = "GERMAN_OE";
+};
+
     
     de_ue: german_ue {
         compatible = "zmk,behavior-macro";
