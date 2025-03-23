@@ -86,7 +86,7 @@ macros {
         <&macro_press &kp LALT>, 
         <&macro_tap &kp U>, 
         <&macro_release &kp LALT>,
-        <&macro_wait_time 20>, // Minimal delay for wired connection
+        <&macro_wait_time 1>, // Minimal delay for wired connection
         <&macro_tap &kp O>;
     label = "GERMAN_OE";
 };
