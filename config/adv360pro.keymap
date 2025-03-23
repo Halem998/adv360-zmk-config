@@ -47,8 +47,8 @@
 hm_ae: homerow_mod_ae {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <30>;
-            quick-tap-ms = <30>;
+            tapping-term-ms = <40>;
+            quick-tap-ms = <40>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&ae_de>;
             label = "HOMEROW_MOD_AE";
