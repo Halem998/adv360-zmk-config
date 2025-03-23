@@ -80,8 +80,8 @@ macros {
  de_oe: german_oe {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
-    wait-ms = <5>; // Try a very low value for wired connection
-    tap-ms = <5>;  // Try a very low value for wired connection
+   // wait-ms = <5>; // Try a very low value for wired connection
+   //  tap-ms = <5>;  // Try a very low value for wired connection
     bindings = 
         <&macro_press &kp LALT>, 
         <&macro_tap &kp U>, 
