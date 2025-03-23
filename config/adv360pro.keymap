@@ -47,8 +47,8 @@
 hm_ss: homerow_mod_ss {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <125>;
+            tapping-term-ms = <100>;
+            quick-tap-ms = <100>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&de_eszett>;
             label = "HOMEROW_MOD_SS";
@@ -62,6 +62,8 @@ macros {
    de_eszett: german_eszett {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
+        wait-ms = <1>; // Added wait time
+        tap-ms = <2>;  // Added tap time
         bindings = <&macro_press &kp LALT>, <&macro_tap &kp S>, <&macro_release &kp LALT>;
         label = "GERMAN_ESZETT";
     };
@@ -69,6 +71,8 @@ macros {
     de_ae: german_ae {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
+        wait-ms = <1>; // Added wait time
+        tap-ms = <2>;  // Added tap time
         bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_release &kp LALT>, <&macro_tap &kp A>;
         label = "GERMAN_AE";
     };
@@ -76,6 +80,8 @@ macros {
     de_oe: german_oe {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
+        wait-ms = <1>; // Added wait time
+        tap-ms = <2>;  // Added tap time
         bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_release &kp LALT>, <&macro_tap &kp O>;
         label = "GERMAN_OE";
     };
@@ -83,6 +89,8 @@ macros {
     de_ue: german_ue {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
+        wait-ms = <1>; // Added wait time
+        tap-ms = <2>;  // Added tap time
         bindings = <&macro_press &kp LALT>, <&macro_tap &kp U>, <&macro_release &kp LALT>, <&macro_tap &kp U>;
         label = "GERMAN_UE";
     };
