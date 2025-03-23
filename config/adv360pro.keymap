@@ -77,16 +77,16 @@ macros {
         label = "GERMAN_AE";
     };
     
-    de_oe: german_oe {
+ de_oe: german_oe {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
-    wait-ms = <30>;
-    tap-ms = <30>;
+    wait-ms = <5>; // Try a very low value for wired connection
+    tap-ms = <5>;  // Try a very low value for wired connection
     bindings = 
         <&macro_press &kp LALT>, 
         <&macro_tap &kp U>, 
         <&macro_release &kp LALT>,
-        <&macro_wait_time 10>, // Add a small delay here
+        <&macro_wait_time 1>, // Minimal delay for wired connection
         <&macro_tap &kp O>;
     label = "GERMAN_OE";
 };
