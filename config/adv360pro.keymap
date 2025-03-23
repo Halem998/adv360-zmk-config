@@ -37,12 +37,71 @@
     
 / { /*start of device tree */
 
+    behaviors {
+    unicode_input: unicode_input {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&macro_press &kp LCTRL>, <&macro_press &kp LSHFT>, <&macro_tap &kp U>, <&macro_release &kp LSHFT>, <&macro_release &kp LCTRL>;
+        label = "UNICODE_INPUT";
+        };
 
-  
+    hm_ss: homerow_mod_ss {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&german_eszett>;
+            label = "HOMEROW_MOD_SS";
+    };
+
+    };
 
 
 
- 
+
+macros {
+         ae_de: ae_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>; // Added wait time
+            tap-ms = <1>;  // Added tap time
+            bindings = <&kp A &kp E>;
+            label = "AE_MACRO"; // Added label
+            };
+
+
+
+       german_eszett: german_eszett {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <1>; // Added wait time
+            tap-ms = <1>;  // Added tap time
+            bindings = <&macro_press &kp LALT>, <&macro_tap &kp S>, <&macro_release &kp LALT>;
+            label = "GERMAN_ESZETT";
+             };
+        
+
+
+        oe_de: oe_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <1>; // Added wait time
+            tap-ms = <1>;  // Added tap time
+            bindings = <&kp O &kp E>;
+            label = "OE_MACRO"; // Added label
+            };
+
+
+        ue_de: ue_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <1>; // Added wait time
+            tap-ms = <1>;  // Added tap time
+            bindings = <&kp U &kp E>;
+            label = "UE_MACRO"; // Added label
+            };
+        };
 
    combos {
         compatible = "zmk,combos";
@@ -168,43 +227,52 @@
 
     keymap {
         compatible = "zmk,keymap";
+ 
+        qwerty_layer {
+            bindings = <
+     ___            ___           ___           ___           ___           ___            ___              ___            ___           ___           ___           ___             ___                  &mo MOD
+     ___            &kp Q         &kp W         &kp E         &kp R         &kp T          ___              ___            &kp Y         &kp U         &kp I         &kp O          &kp P                  ___
+     ___            &hml LGUI A  &hml LALT S   &hml LCTRL D   &hml LSHFT F  &kp G          ___              ___            &kp H         &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L    &hmr RGUI SEMI          ___
+     ___            &kp Z         &kp X         &kp C         &kp V         &kp B                                          &kp N         &kp M         &kp COMMA     &kp DOT        &kp SLSH                 ___
+     ___            ___           ___           ___           ___                                                                        ___           ___           ___             ___                   ___
+                                                                             ___           ___              ___            ___    
+                                                              &lt NUM BSPC  &lt FN ESC     ___              ___            &lt NAV RET  &lt SYM SPC
+                                                                                           ___              ___
+                    >;
+                    };
 
-qwerty_layer {
-    bindings = <
-        ___           ___           ___           ___           ___           ___           ___           ___           ___           ___           ___           ___           ___           &mo MOD
-        ___           &kp Q         &kp W         &kp E         &kp R         &kp T         ___           ___           &kp Y         &kp U         &kp I         &kp O         &kp P          ___
-        ___           &hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHFT F  &kp G         ___           ___           &kp H         &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L   &hmr RGUI SEMI ___
-        ___           &kp Z         &kp X         &kp C         &kp V         &kp B         ___           ___           &kp N         &kp M         &kp COMMA     &kp DOT       &kp SLSH       ___
-        ___           ___           ___           ___           ___           ___           ___           ___           ___           ___           ___           ___           ___            ___
-                                                                 &lt NUM BSPC &lt FN ESC    ___           ___           &lt NAV RET   &lt SYM SPC
-    >;
-};
 
-sym_layer {
-    bindings = <
-___         ___         ___         ___         ___         ___         ___         ___         ___         ___         ___         ___         ___         ___
-___         ___         &kp GRAVE   &kp DLLR    &kp BSLH    ___         ___         ___         ___         &kp RA(N8)  &kp SLASH   &kp RA(N9)  &msqt_morph ___
-&kp HASH   &kp RA(MINUS) &kp N8    &kp N2      &kp N9      &kp RBRC    ___         ___         &kp N5      &kp RA(N7)  &kp N0      &kp RA(N0)  &kp RA(NUBS) &kp EQUAL
-___         ___         &kp SLASH   &kp RBKT    &kp N4      ___                               ___         &kp N6      &kp GRAVE   &kp RA(PLUS) ___        ___
-___         ___         ___         ___         ___                                                       ___         ___         ___         ___         ___
-                                                           ___         ___         ___         ___
-                                               ___         ___         ___         ___         ___         ___
-                                                                       ___         ___
-    >;
-};
 
-num_layer {
-    bindings = <
-___         ___         ___         ___         ___         ___         ___         ___         ___         ___         ___         ___         ___         ___
-___         &kp RBRC    &kp GRAVE   &kp DLLR    &kp BSLH    ___         ___         ___         &mbrc       &kp N7      &kp N8      &kp N9      ___         ___
-___         &kp GRAVE   &kp SLASH   &kp N2      &kp N9      &kp RBRC    ___         ___         &mbkt       &kp N4      &kp N5      &kp N6      ___         ___
-&num_word   &kp RA(MINUS) &kp RBKT  &kp COMMA   &kp N4      ___                               &mpar       &kp N1      &kp N2      &kp N3      ___         ___
-___         ___         ___         ___         ___                                                       ___         ___         ___         ___         ___
-                                                           ___         ___         ___         ___
-                                               ___         ___         ___         ___         ___         &kp N0
-                                                                       ___         ___
-    >;
-};
+        
+        sym_layer {
+          bindings = <
+     ___            ___           ___           ___           ___           ___            ___              ___            ___           ___            ___          ___           ___            ___
+     ___            ___           &kp LT        SYM_DOLLAR    &kp GT        ___            ___              ___            ___           SYM_LBKT      &kp UNDER     SYM_RBKT       &msqt_morph   ___
+     &kp SQT        &kp BSLH      &kp LPAR      &kp DQT       &kp RPAR      &kp HASH       ___              ___            &kp PRCNT     &kp LBRC      &kp EQUAL     &kp RBRC       &kp PIPE      &kp GRAVE
+     ___            ___           SYM_MINUS     &kp STAR      SYM_PLUS      ___                                            ___           &kp AMPS      &kp CARET     &kp TILDE      ___           ___
+     ___            ___           ___           ___           ___                                                                        ___            ___        ___           ___            ___
+                                                                             ___           ___              ___           ___ 
+                                                               ___           ___           ___              ___           ___            ___
+                                                                                           ___              ___
+            >;
+        };
+
+        num_layer {
+            bindings = <
+     ___            ___           ___           ___           ___           ___             ___              ___            ___          ___           ___           ___           ___            ___
+     ___            &kp HASH      &kp LT         SYM_DOLLAR   &kp GT        ___             ___              ___            &mbrc        &kp N7        &kp N8        &kp N9        ___            ___
+     ___            SYM_CARET     SYM_MINUS      &kp DQT      &kp RPAR      &kp HASH        ___              ___            &mbkt        &kp N4        &kp N5        &kp N6        ___            ___
+     &num_word      &kp BSLH      &kp STAR      &kp COMMA      SYM_PLUS       ___                                           &mpar        &kp N1        &kp N2        &kp N3        ___            ___
+     ___            ___           ___           ___           ___                                                                        ___           ___           ___           ___            ___
+                                                                             ___           ___              ___           ___
+                                                               ___           ___           ___              ___           ___           &kp N0
+                                                                                           ___              ___
+                    >;
+                    };
+
+
+       
+
 
         
 
