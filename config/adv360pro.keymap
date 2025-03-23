@@ -51,7 +51,7 @@ hm_ae: homerow_mod_ae {
             tapping-term-ms = <200>;  // Tap/hold threshold
             quick-tap-ms = <150>;     // Prevents repeat tap issues
             flavor = "tap-preferred"; // Prioritizes tap action
-            bindings = <&ae_de> <&kp RGUI>;  // Tap: ae_macro, Hold: RGUI
+            bindings = <&ae_de &kp RGUI>;  // Tap: ae_macro, Hold: RGUI
             label = "HOMEROW_MOD_AE";
         };
 
