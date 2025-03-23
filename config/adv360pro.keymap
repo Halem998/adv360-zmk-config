@@ -44,64 +44,8 @@
         bindings = <&macro_press &kp LCTRL>, <&macro_press &kp LSHFT>, <&macro_tap &kp U>, <&macro_release &kp LSHFT>, <&macro_release &kp LCTRL>;
         label = "UNICODE_INPUT";
         };
-
-    hm_ss: homerow_mod_ss {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <125>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&german_eszett>;
-            label = "HOMEROW_MOD_SS";
     };
 
-    };
-
-
-
-
-macros {
-         ae_de: ae_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <0>; // Added wait time
-            tap-ms = <1>;  // Added tap time
-            bindings = <&kp A &kp E>;
-            label = "AE_MACRO"; // Added label
-            };
-
-
-
-       german_eszett: german_eszett {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <1>; // Added wait time
-            tap-ms = <1>;  // Added tap time
-            bindings = <&macro_press &kp LALT>, <&macro_tap &kp S>, <&macro_release &kp LALT>;
-            label = "GERMAN_ESZETT";
-             };
-        
-
-
-        oe_de: oe_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <1>; // Added wait time
-            tap-ms = <1>;  // Added tap time
-            bindings = <&kp O &kp E>;
-            label = "OE_MACRO"; // Added label
-            };
-
-
-        ue_de: ue_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <1>; // Added wait time
-            tap-ms = <1>;  // Added tap time
-            bindings = <&kp U &kp E>;
-            label = "UE_MACRO"; // Added label
-            };
-        };
 
    combos {
         compatible = "zmk,combos";
