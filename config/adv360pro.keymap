@@ -47,8 +47,8 @@
 hm_ae: homerow_mod_ae {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <1>;
-            quick-tap-ms = <1>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&ae_de>;
             label = "HOMEROW_MOD_AE";
@@ -59,6 +59,17 @@ hm_ae: homerow_mod_ae {
 
 
 macros {
+         ae_de: ae_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <1>; // Added wait time
+            tap-ms = <1>;  // Added tap time
+            bindings = <&kp A &kp E>;
+            label = "AE_MACRO"; // Added label
+            };
+
+
+
        german_eszett: german_eszett {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -68,14 +79,7 @@ macros {
             label = "GERMAN_ESZETT";
              };
         
-        ae_de: ae_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <1>; // Added wait time
-            tap-ms = <1>;  // Added tap time
-            bindings = <&kp A &kp E>;
-            label = "AE_MACRO"; // Added label
-            };
+
 
         oe_de: oe_macro {
             compatible = "zmk,behavior-macro";
