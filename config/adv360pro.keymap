@@ -169,12 +169,12 @@
                     };
 
 
-        sym_layer {
+        sym_layer { 
           bindings = <
      ___            ___           ___           ___           ___           ___            ___              ___            ___           ___            ___          ___           ___           ___
-     ___            ___           &kp CARET     SYM_DOLLAR    &kp TILDE     ___            ___              ___            ___           SYM_LBKT      &kp UNDER     SYM_RBKT      &msqt_morph   ___
-     &kp SQT        &kp BSLH      &kp LPAR      &kp DQT       &kp RPAR      &kp HASH       ___              ___            &kp PRCNT     &kp LBRC      &kp EQUAL     &kp RBRC      &kp AMPS      &kp GRAVE
-     ___            ___           SYM_MINUS     &kp STAR      SYM_PLUS      ___                                            ___           &kp PIPE      &kp LT        &kp GT        ___           ___
+     ___            ___           &kp CARET     SYM_DOLLAR    &kp TILDE     ___            ___              ___            ___           &kp UNDER     SYM_LBKT      SYM_RBKT      &msqt_morph   ___
+     &kp SQT        &kp STAR      &kp DQT       &kp LPAR      &kp RPAR      &kp HASH       ___              ___            &kp PRCNT     &kp EQUAL     &kp LBRC      &kp RBRC      &kp AMPS      &kp GRAVE
+     ___            SYM_PLUS      SYM_MINUS     &kp BSLH      &kp FSLH      ___                                            ___           &kp PIPE      &kp LT        &kp GT        ___           ___
      ___            ___           ___           ___           ___                                                                        ___            ___          ___           ___           ___
                                                                              ___           ___              ___           ___ 
                                                                ___           ___           ___              ___           ___            ___
@@ -187,7 +187,7 @@
      ___            ___           ___           ___           ___           ___             ___              ___            ___          ___           ___           ___           ___            ___
      ___            &kp HASH      &kp LT         SYM_DOLLAR   &kp GT        ___             ___              ___            &mbrc        &kp N7        &kp N8        &kp N9        ___            ___
      ___            SYM_CARET     SYM_MINUS      &kp DQT      &kp RPAR      &kp HASH        ___              ___            &mbkt        &kp N4        &kp N5        &kp N6        ___            ___
-     &num_word      &kp BSLH      &kp STAR      &kp COMMA      SYM_PLUS       ___                                           &mpar        &kp N1        &kp N2        &kp N3        ___            ___
+     &num_word      &kp BSLH      &kp STAR      &kp COMMA    SYM_PLUS       ___                                           &mpar        &kp N1        &kp N2        &kp N3        ___            ___
      ___            ___           ___           ___           ___                                                                        ___           ___           ___           ___            ___
                                                                              ___           ___              ___           ___
                                                                ___           ___           ___              ___           ___           &kp N0
