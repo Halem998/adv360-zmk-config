@@ -173,8 +173,8 @@
           bindings = <
      ___            ___           ___           ___           ___           ___            ___              ___            ___           ___            ___          ___           ___            ___
      ___            ___           &kp LT        SYM_DOLLAR    &kp GT        ___            ___              ___            ___           SYM_LBKT      &kp UNDER     SYM_RBKT       &msqt_morph   ___
-     &kp SQT        &kp BSLH      &kp LPAR      &kp DQT       &kp RPAR      &kp HASH       ___              ___            &kp PRCNT     &kp LBRC      &kp EQUAL     &kp RBRC       &kp PIPE      &kp GRAVE
-     ___            ___           SYM_MINUS     &kp STAR      SYM_PLUS      ___                                            ___           &kp AMPS      &kp CARET     &kp TILDE      ___           ___
+     &kp SQT        &kp BSLH      &kp LPAR      &kp DQT       &kp RPAR      &kp HASH       ___              ___            &kp PRCNT     &kp LBRC      &kp EQUAL     &kp RBRC       &kp AMPS      &kp GRAVE
+     ___            ___           SYM_MINUS     &kp STAR      SYM_PLUS      ___                                            ___           &kp PIPE      &kp CARET     &kp TILDE      ___           ___
      ___            ___           ___           ___           ___                                                                        ___            ___          ___            ___           ___
                                                                              ___           ___              ___           ___ 
                                                                ___           ___           ___              ___           ___            ___
