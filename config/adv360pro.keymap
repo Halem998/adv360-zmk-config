@@ -170,7 +170,7 @@
  
     qwerty_layer {
             bindings = <
-     ___            ___           ___           ___           ___           ___            ___              ___            ___           ___           ___           ___             ___                   kp&mo MOD
+     ___            ___           ___           ___           ___           ___            ___              ___            ___           ___           ___           ___             ___                   &mo MOD
      ___            &kp Q         &kp W         &kp E         &kp R         &kp T          ___              ___            &kp Y         &kp U         &kp I         &kp O          &kp P                  ___
      &kp DQT        &hml LGUI A  &hml LALT S   &hml LCTRL D   &hml LSHFT F  &kp G          ___              ___            &kp H         &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L    &hmr RGUI AMPS         &kp SQT 
      ___            &kp Z         &kp X         &kp C         &kp V         &kp B                                          &kp N         &kp M         ___           ___             ___                   ___
