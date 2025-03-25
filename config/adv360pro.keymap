@@ -83,14 +83,14 @@
         combo_doubleq {
             timeout-ms = <50>;
             key-positions = <RT1 RT2 RT3>; 
-            bindings = <&mdqt_morph>;
+            bindings = <&mdqt>;
             layers = <0 1 2>;
         };
         
         combo_singleq {
             timeout-ms = <20>;
             key-positions = <LT3 LT2 LT1>;
-            bindings = <&msqt_morph>;
+            bindings = <&msqt>;
             layers = <0 1 2>;
         };
 
