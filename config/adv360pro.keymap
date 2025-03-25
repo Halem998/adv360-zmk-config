@@ -66,6 +66,7 @@ german_ae: german_ae {
     wait-ms = <1>;
     tap-ms = <1>;
     bindings = <&macro_tap &kp DQT>, <&macro_tap &kp A>;  // Auto-shifts with Shift!
+    label = "GERMAN_AE";
 };
 
 // ö/Ö
@@ -75,6 +76,7 @@ german_oe: german_oe {
     wait-ms = <1>;
     tap-ms = <1>;
     bindings = <&macro_tap &kp DQT>, <&macro_tap &kp O>;
+    label = "GERMAN_OE";
 };
 
 // ü/Ü
@@ -84,6 +86,7 @@ german_ue: german_ue {
     wait-ms = <1>;
     tap-ms = <1>;
     bindings = <&macro_tap &kp DQT>, <&macro_tap &kp U>;
+    label = "GERMAN_UE";
 };
 
 //ger_eszett: german_eszett {
