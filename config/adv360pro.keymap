@@ -37,40 +37,64 @@
     
 / { /*start of device tree */
 
+//behaviors {
+//    
+// hm_ss: homerow_mod_ss {
+//            compatible = "zmk,behavior-hold-tap";
+//            #binding-cells = <2>;
+//            tapping-term-ms = <80>;
+//            quick-tap-ms = <80>;
+//            flavor = "tap-preferred";
+//            bindings = <&kp>, <&ger_eszett>;
+//            label = "HOMEROW_MOD_SS";
+//    };
+//
+// };
+
+
    macros {
 
-ger_ae: german_ae {
+
+
+
+
+
+// ä/Ä
+german_ae: german_ae {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
-    wait-ms = <1>; // Added wait time
-        tap-ms = <1>;  // Added tap time
-    bindings = <&macro_tap &kp DQT>, <&macro_tap &kp LS(A)>;  // " + Shift+A → Ä
+    wait-ms = <1>;
+    tap-ms = <1>;
+    bindings = <&macro_tap &kp DQT>, <&macro_tap &kp A>;  // Auto-shifts with Shift!
 };
 
-ger_oe: german_oe {
+// ö/Ö
+german_oe: german_oe {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
-    wait-ms = <1>; // Added wait time
-        tap-ms = <1>;  // Added tap time
-    bindings = <&macro_tap &kp DQT>, <&macro_tap &kp LS(O)>;  // " + Shift+O → Ö
+    wait-ms = <1>;
+    tap-ms = <1>;
+    bindings = <&macro_tap &kp DQT>, <&macro_tap &kp O>;
 };
 
-ger_oe: german_ue {
+// ü/Ü
+german_ue: german_ue {
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
-    wait-ms = <1>; // Added wait time
-        tap-ms = <1>;  // Added tap time
-    bindings = <&macro_tap &kp DQT>, <&macro_tap &kp LS(U)>;  // " + Shift+U → Ü
+    wait-ms = <1>;
+    tap-ms = <1>;
+    bindings = <&macro_tap &kp DQT>, <&macro_tap &kp U>;
 };
 
-ger_eszett: german_eszett {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        wait-ms = <1>; // Added wait time
-        tap-ms = <1>;  // Added tap time
-        bindings = <&macro_press &kp LALT>, <&macro_tap &kp S>, <&macro_release &kp LALT>;
-        label = "GERMAN_ESZETT";
-    };
+//ger_eszett: german_eszett {
+//        compatible = "zmk,behavior-macro";
+//        #binding-cells = <0>;
+//        wait-ms = <1>; // Added wait time
+//        tap-ms = <1>;  // Added tap time
+//        bindings = <&macro_press &kp LALT>, <&macro_tap &kp S>, <&macro_release &kp LALT>;
+//        label = "GERMAN_ESZETT";
+//    };
+
 }; 
 
    combos {
