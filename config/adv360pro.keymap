@@ -37,7 +37,41 @@
     
 / { /*start of device tree */
 
+   macros {
 
+ger_ae: german_ae {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <1>; // Added wait time
+        tap-ms = <1>;  // Added tap time
+    bindings = <&macro_tap &kp DQT>, <&macro_tap &kp LS(A)>;  // " + Shift+A → Ä
+};
+
+ger_oe: german_oe {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <1>; // Added wait time
+        tap-ms = <1>;  // Added tap time
+    bindings = <&macro_tap &kp DQT>, <&macro_tap &kp LS(O)>;  // " + Shift+O → Ö
+};
+
+ger_oe: german_ue {
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    wait-ms = <1>; // Added wait time
+        tap-ms = <1>;  // Added tap time
+    bindings = <&macro_tap &kp DQT>, <&macro_tap &kp LS(U)>;  // " + Shift+U → Ü
+};
+
+ger_eszett: german_eszett {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        wait-ms = <1>; // Added wait time
+        tap-ms = <1>;  // Added tap time
+        bindings = <&macro_press &kp LALT>, <&macro_tap &kp S>, <&macro_release &kp LALT>;
+        label = "GERMAN_ESZETT";
+    };
+}; 
 
    combos {
         compatible = "zmk,combos";
