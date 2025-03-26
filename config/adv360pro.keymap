@@ -247,7 +247,7 @@ german_ue: german_ue {
           bindings = <
      ___            ___           ___           ___           ___           ___            ___              ___            ___           ___            ___          ___           ___           ___
      ___            &kp DQT       &kp DQT       &kp LPAR      &kp RPAR      ___            ___              ___            ___           &kp UNDER     SYM_LBKT      SYM_RBKT      &kp SQT       ___
-     &kp DOLLAR     &kp CARET     &kp TILDE     SYM_PLUS      &kp MINUS     &kp HASH       ___              ___            &kp PRCNT     &kp EQUAL     &kp LBRC      &kp RBRC      &kp GRAVE     &kp AT
+     &kp DOLLAR     SYM_CARET     SYM_TILDE     SYM_PLUS      SYM_MINUS     &kp HASH       ___              ___            &kp PRCNT     &kp EQUAL     &kp LBRC      &kp RBRC      &kp GRAVE     &kp AT
      ___            ___           &kp STAR      &kp BSLH      &kp FSLH      ___                                            ___           &kp PIPE      &kp LT        &kp GT        ___           ___
      ___            ___           ___           ___           ___                                                                        ___            ___          ___           ___           ___
                                                                              ___           ___              ___           ___ 
