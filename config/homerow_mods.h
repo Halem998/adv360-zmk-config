@@ -33,7 +33,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand
 #define SYM_PLUS   &hml LCTRL PLUS
 #define SYM_TILDE  &hml LSHFT TILDE
   
-#define SYM_LBKT   &hmr RALT LBKT
-#define SYM_RBKT   &hmr RCTRL RBKT
+#define SYM_LBKT   &hmr RCTRL LBKT
+#define SYM_RBKT   &hmr RALT RBKT
 #define SYM_AT     &hmr RGUI AT
 #define SYM_EQUAL  &hmr RSHIFT EQUAL
