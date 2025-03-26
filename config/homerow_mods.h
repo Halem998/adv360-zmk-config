@@ -29,8 +29,8 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand
 
 // SYM Layer home row mods
 #define SYM_CARET  &hml LGUI CARET
-#define SYM_MINUS  &hml LALT MINUS
-#define SYM_PLUS   &hml LCTRL PLUS
+#define SYM_MINUS  &hml LCTRL MINUS
+#define SYM_PLUS   &hml LALT PLUS
 #define SYM_TILDE  &hml LSHFT TILDE
   
 #define SYM_LBKT   &hmr RCTRL LBKT
