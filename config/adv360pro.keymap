@@ -246,9 +246,9 @@ german_ue: german_ue {
         sym_layer { 
           bindings = <
      ___            ___           ___           ___           ___           ___            ___              ___            ___           ___            ___          ___           ___           ___
-     ___            &kp DQT       &kp DQT       &kp LPAR      &kp RPAR      ___            ___              ___            ___           &kp UNDER     SYM_LBKT      SYM_RBKT      &kp SQT       ___
-     &kp DOLLAR     SYM_CARET     SYM_TILDE     SYM_PLUS      SYM_MINUS     &kp HASH       ___              ___            &kp PRCNT     &kp EQUAL     &kp LBRC      &kp RBRC      &kp GRAVE     &kp AT
-     ___            ___           &kp STAR      &kp BSLH      &kp FSLH      ___                                            ___           &kp PIPE      &kp LT        &kp GT        ___           ___
+     ___            ___           &kp LPAR      &kp RPAR      &kp DQT       ___            ___              ___            ___           &kp UNDER     &kp LBRC      &kp RBRC      &kp SQT       ___
+     &kp DOLLAR     SYM_CARET     SYM_PLUS      SYM_MINUS     SYM_TILDE     &kp HASH       ___              ___            &kp PRCNT     SYM_EQUAL     SYM_LBKT      SYM_RBKT      SYM_AT        &kp GRAVE
+     ___            ___           &kp BSLH      &kp FSLH      &kp STAR      ___                                            ___           &kp PIPE      &kp LT        &kp GT        ___           ___
      ___            ___           ___           ___           ___                                                                        ___            ___          ___           ___           ___
                                                                              ___           ___              ___           ___ 
                                                                ___           ___           ___              ___           ___            ___
