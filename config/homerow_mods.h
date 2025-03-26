@@ -31,8 +31,9 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand
 #define SYM_CARET  &hml LGUI CARET
 #define SYM_MINUS  &hml LALT MINUS
 #define SYM_PLUS   &hml LCTRL PLUS
-#define SYM_EQUAL  &hml LSHFT EQUAL
-#define SYM_LBKT   &hmr LSHFT LBKT
+#define SYM_TILDE  &hml LSHFT TILDE
+  
+#define SYM_LBKT   &hmr RALT LBKT
 #define SYM_RBKT   &hmr RCTRL RBKT
-#define SYM_AT     &hmr RALT AT
-#define SYM_DOLLAR &hmr RGUI DOLLAR
+#define SYM_AT     &hmr RGUI AT
+#define SYM_EQUAL  &hmr RSHIFT EQUAL
