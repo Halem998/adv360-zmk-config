@@ -249,7 +249,7 @@ macros {
                     };
 
 sym_layer {
-  bindings = 
+  bindings = <
      ___            ___           ___           ___           ___           ___            ___              ___            ___           ___            ___          ___           ___            ___
      ___            &none         &kp LPAR      &kp RPAR      &kp DLLR      &none          ___              ___            &none         &kp UNDER      &kp LBRC     &kp RBRC      &none          ___
      &kp AMPS       &kp CARET     &kp PLUS      &kp MINUS     &kp TILDE     &kp HASH       ___              ___            &kp PRCNT     &kp EQUAL      &kp LBKT     &kp RBKT      &kp AT         &kp GRAVE
