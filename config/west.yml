@@ -2,12 +2,12 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: cosmicbuffalo
-      url-base: https://github.com/cosmicbuffalo
+    - name: refil
+      url-base: https://github.com/refil
   projects:
     - name: zmk
-      remote: cosmicbuffalo
-      revision: adv360-led
+      remote: refil
+      revision: adv360-z3.5-2
       import: app/west.yml
   self:
     path: config
