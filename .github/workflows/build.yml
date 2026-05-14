@@ -64,9 +64,9 @@ jobs:
         run: |
           if [ -n "${{ matrix.shield }}" ]
           then
-            west build -s zmk/app -b "${{ matrix.board }}" -- -DSHIELD="${{ matrix.shield }}" -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+            west build -s zmk/app -b "${{ matrix.board }}" -- -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DSHIELD="${{ matrix.shield }}" -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
           else
-            west build -s zmk/app -b "${{ matrix.board }}" -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+            west build -s zmk/app -b "${{ matrix.board }}" -- -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
           fi
 
       - name: Rename uf2
