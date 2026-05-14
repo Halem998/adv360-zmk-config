@@ -11,7 +11,7 @@
 #define ___ &trans
 
 
-
+/* */
 /* Layer references  */
 #define QWERTY 0
 #define SYM 1
